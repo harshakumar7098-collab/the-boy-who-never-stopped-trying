@@ -1,0 +1,9 @@
+{
+  "name": "The Boy Who Never Stopped Trying",
+  "short_name": "Memoir",
+  "description": "A cinematic digital memoir by H.K Anand, narrated through Arjun.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f6efe2",
+  "theme_color": "#b88335"
+}
