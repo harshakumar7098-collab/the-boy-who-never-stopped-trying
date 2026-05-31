@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Boy Who Never Stopped Trying | H.K Anand</title>
+  <meta name="description" content="A cinematic digital memoir about love, hope, growth, heartbreak, memory, and learning to let go. Written by H.K Anand and narrated through Arjun.">
+  <meta name="theme-color" content="#f5efe3">
+  <meta property="og:title" content="The Boy Who Never Stopped Trying">
+  <meta property="og:description" content="An interactive literary memoir by H.K Anand, narrated through Arjun.">
+  <meta property="og:type" content="book">
+  <meta property="og:image" content="assets/watercolor-road.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preload" href="assets/watercolor-road.png" as="image">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Book",
+      "name": "The Boy Who Never Stopped Trying",
+      "alternateName": "A Memoir About Love, Hope, Growth, and Learning to Let Go",
+      "author": {
+        "@type": "Person",
+        "name": "H.K Anand"
+      },
+      "bookFormat": "EBook",
+      "inLanguage": "en"
+    }
+  </script>
+</head>
+<body>
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+  <a class="skip-link" href="#main">Skip to memoir</a>
+
+  <header class="topbar" aria-label="Book controls">
+    <a class="brand" href="#home" aria-label="Go to home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>The Boy Who Never Stopped Trying</span>
+    </a>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="#toc">Contents</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#search">Search</a>
+      <a href="#memory">In Memory</a>
+      <a href="#author">Author</a>
+    </nav>
+    <div class="controls">
+      <button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">◐</button>
+      <button id="bookmarkBtn" class="icon-btn" type="button" aria-label="Bookmark current chapter" title="Bookmark">⌑</button>
+      <button id="immersiveBtn" class="icon-btn" type="button" aria-label="Toggle immersive reading" title="Immersive reading">□</button>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section id="view" aria-live="polite"></section>
+  </main>
+
+  <div class="ambient" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
