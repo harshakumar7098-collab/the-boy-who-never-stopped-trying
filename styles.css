@@ -1436,6 +1436,7 @@ body.immersive .chapter-body {
   to { transform: translate3d(-8vw, 48vh, 0) rotate(320deg); }
 }
 .privacy-presence {
+  display: none;
   position: absolute;
   right: clamp(7.5rem, 25vw, 21rem);
   bottom: clamp(5.2rem, 13vw, 10rem);
@@ -1465,15 +1466,33 @@ body.immersive .chapter-body {
 .memoir-character {
   position: absolute;
   bottom: clamp(3.7rem, 10vw, 7.4rem);
-  width: clamp(3.2rem, 6vw, 5.1rem);
-  height: clamp(8.8rem, 18vw, 13.5rem);
-  opacity: .58;
-  filter: drop-shadow(0 20px 28px var(--figure-shadow)) saturate(.9);
+  width: clamp(5.4rem, 9vw, 8.2rem);
+  height: clamp(12.8rem, 23vw, 18rem);
+  opacity: .52;
+  filter: drop-shadow(0 24px 34px var(--figure-shadow)) saturate(.86);
   transform-origin: 50% 100%;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 .memoir-character span {
+  display: none;
+}
+.memoir-character::before,
+.memoir-character::after {
+  content: "";
   position: absolute;
-  display: block;
+  inset: 0;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.memoir-character::after {
+  z-index: -1;
+  transform: translate(.22rem, .22rem) scale(1.02);
+  filter: blur(4px);
+  opacity: .22;
+  background: radial-gradient(ellipse at 50% 94%, rgba(52, 38, 31, .42), transparent 62%);
 }
 .arjun-character {
   left: clamp(5.5rem, 17vw, 18rem);
@@ -1482,6 +1501,12 @@ body.immersive .chapter-body {
 .maya-character {
   right: clamp(7rem, 22vw, 22rem);
   transform: scale(1);
+}
+.arjun-character::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 132 270'%3E%3Cg fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M66 30c-18 0-31 14-31 33 0 13 5 25 15 32v16' fill='%23d0a081' stroke='%23604336' stroke-opacity='.34' stroke-width='2'/%3E%3Cpath d='M38 59c3-23 21-38 45-32 12 3 22 12 25 24-12-8-29-6-42-3-11 3-20 1-28 11z' fill='%23241e1e' stroke='%231b1717' stroke-opacity='.45' stroke-width='2'/%3E%3Cpath d='M88 59c8 9 7 24-3 37' stroke='%23241e1e' stroke-opacity='.45' stroke-width='8'/%3E%3Cpath d='M77 63c6 7 6 18-1 27' stroke='%23543c33' stroke-opacity='.4' stroke-width='2'/%3E%3Cpath d='M52 76c5-3 10-3 15 0' stroke='%23543c33' stroke-opacity='.42' stroke-width='2'/%3E%3Cpath d='M46 116c-13 13-20 45-19 86 13 12 57 15 79 0-1-35-8-69-23-86-11 8-25 8-37 0z' fill='%235b6e76' fill-opacity='.72' stroke='%232d373d' stroke-opacity='.38' stroke-width='2'/%3E%3Cpath d='M42 130c-9 20-12 42-10 66M90 129c9 22 12 45 9 68' stroke='%23f7efe0' stroke-opacity='.24' stroke-width='2'/%3E%3Cpath d='M42 205c-6 17-9 35-8 53M94 205c7 18 10 35 9 53' stroke='%232d373d' stroke-opacity='.36' stroke-width='5'/%3E%3Cpath d='M28 257c10 4 19 4 28 0M84 257c10 4 20 4 30 0' stroke='%232d373d' stroke-opacity='.42' stroke-width='5'/%3E%3C/g%3E%3C/svg%3E");
+}
+.maya-character::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 142 278'%3E%3Cg fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M74 30c-18 0-32 15-32 34 0 16 8 30 21 36v15' fill='%23d6a486' stroke='%23604336' stroke-opacity='.3' stroke-width='2'/%3E%3Cpath d='M49 43c9-17 30-23 49-13 18 9 24 32 19 58-4 22-14 42-19 64-7-21-15-39-28-54-13-15-25-30-21-55z' fill='%23201b1d' fill-opacity='.9' stroke='%23181416' stroke-opacity='.35' stroke-width='2'/%3E%3Cpath d='M86 47c15 16 17 39 5 61' stroke='%23201b1d' stroke-opacity='.56' stroke-width='12'/%3E%3Cpath d='M64 67c5-2 10-2 15 0' stroke='%235f4438' stroke-opacity='.36' stroke-width='2'/%3E%3Cpath d='M54 119c-17 21-27 74-26 124 20 13 67 16 91 0-3-48-16-102-36-124-9 7-20 8-29 0z' fill='%23b98278' fill-opacity='.68' stroke='%235b4038' stroke-opacity='.3' stroke-width='2'/%3E%3Cpath d='M45 135c-8 25-12 56-11 91M91 135c11 26 17 58 19 91' stroke='%23fff6df' stroke-opacity='.25' stroke-width='2'/%3E%3Cpath d='M39 245c13 12 49 16 73 1' stroke='%235b4038' stroke-opacity='.28' stroke-width='4'/%3E%3C/g%3E%3C/svg%3E");
 }
 .character-head {
   left: 50%;
@@ -1605,60 +1630,44 @@ body.immersive .chapter-body {
   transform: rotate(-10deg);
 }
 .first-memory-characters .maya-character {
-  right: clamp(6.2rem, 24vw, 20rem);
-  bottom: clamp(3.8rem, 10vw, 7.4rem);
-  opacity: .72;
+  right: clamp(2rem, 9vw, 7.4rem);
+  bottom: clamp(2rem, 6vw, 4rem);
+  width: clamp(7.5rem, 16vw, 12.2rem);
+  height: clamp(16.5rem, 34vw, 25rem);
+  opacity: .56;
+  transform: scale(1);
 }
 .first-memory-characters .arjun-character {
-  left: clamp(2rem, 12vw, 12rem);
-  bottom: clamp(3.4rem, 8vw, 6rem);
-  opacity: .34;
-  transform: scale(.76);
-  filter: drop-shadow(0 18px 24px rgba(55, 38, 27, .16)) blur(.15px);
+  left: auto;
+  right: clamp(11.2rem, 25vw, 22rem);
+  bottom: clamp(1.6rem, 4vw, 3rem);
+  width: clamp(4.4rem, 8vw, 6.8rem);
+  height: clamp(10rem, 18vw, 14.2rem);
+  opacity: .2;
+  transform: scale(.82);
+  filter: drop-shadow(0 18px 24px rgba(55, 38, 27, .12)) blur(.25px);
 }
-.first-memory-characters .maya-character .character-body {
-  background:
-    linear-gradient(90deg, rgba(255,255,255,.18), transparent 46%),
-    linear-gradient(180deg, #f5dd7d, #e4b759 58%, #c99145);
-}
-.first-memory-characters .maya-character .character-arm {
-  left: 2%;
-  width: 14%;
-  height: 46%;
-  transform: rotate(54deg);
+.first-memory-characters .maya-character::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 154 292'%3E%3Cg fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M79 29c-19 0-34 15-34 35 0 16 8 29 21 36v16' fill='%23d6a486' fill-opacity='.82' stroke='%23604336' stroke-opacity='.24' stroke-width='2'/%3E%3Cpath d='M48 43c10-18 33-24 53-13 19 10 25 34 19 63-5 24-16 45-22 69-7-24-17-45-31-61-14-16-24-32-19-58z' fill='%23211b1d' fill-opacity='.76' stroke='%23181416' stroke-opacity='.28' stroke-width='2'/%3E%3Cpath d='M92 49c15 17 17 42 4 65' stroke='%23211b1d' stroke-opacity='.5' stroke-width='13'/%3E%3Cpath d='M59 121c-19 22-30 80-29 135 23 14 73 16 98 0-4-53-18-111-41-135-8 7-20 8-28 0z' fill='%23e8c35d' fill-opacity='.68' stroke='%237e5c31' stroke-opacity='.26' stroke-width='2'/%3E%3Cpath d='M51 139c-10 27-14 63-13 101M97 139c13 29 21 64 23 101' stroke='%23fff7d8' stroke-opacity='.32' stroke-width='2'/%3E%3Cpath d='M59 97c13 11 25 11 36 0' stroke='%237e5c31' stroke-opacity='.25' stroke-width='3'/%3E%3Cpath d='M45 257c15 13 53 17 80 1' stroke='%237e5c31' stroke-opacity='.24' stroke-width='4'/%3E%3C/g%3E%3C/svg%3E");
 }
 .couple-profile .arjun-character {
   left: clamp(5rem, 18vw, 18rem);
-  opacity: .5;
+  opacity: .42;
 }
 .couple-profile .maya-character {
   right: clamp(5rem, 18vw, 18rem);
-  opacity: .5;
-}
-.couple-profile .arjun-character .character-head,
-.couple-profile .maya-character .character-head {
-  border-radius: 52% 45% 45% 44%;
-}
-.couple-profile .arjun-character .character-head::before,
-.couple-profile .maya-character .character-head::before {
-  width: 18%;
-  left: auto;
-  right: 20%;
-  box-shadow: none;
+  opacity: .42;
 }
 .road-couple .memoir-character {
   bottom: clamp(1.8rem, 6vw, 3.6rem);
-  width: clamp(2rem, 4vw, 3.1rem);
-  height: clamp(5.8rem, 11vw, 8.5rem);
-  opacity: .4;
+  width: clamp(3rem, 5vw, 4.6rem);
+  height: clamp(7rem, 12vw, 10rem);
+  opacity: .34;
 }
 .road-couple .arjun-character { left: 43%; }
 .road-couple .maya-character { right: 43%; }
-.road-couple .character-head::before {
-  opacity: 0;
-}
 .character-stage.phone-hands .memoir-character {
-  opacity: .22;
+  opacity: .16;
   filter: blur(.2px) drop-shadow(0 14px 22px rgba(20, 25, 31, .18));
 }
 .character-stage.phone-hands .arjun-character {
@@ -1706,7 +1715,7 @@ body.immersive .chapter-body {
   opacity: .78;
 }
 .character-stage.letter-hands .memoir-character {
-  opacity: .28;
+  opacity: .18;
 }
 .character-stage.letter-hands .character-prop.letter-hands {
   display: block;
@@ -1741,12 +1750,12 @@ body.immersive .chapter-body {
   opacity: .72;
 }
 .memory-reflection .maya-character {
-  opacity: .2;
+  opacity: .14;
   transform: scale(.9) translateX(1.5rem);
   filter: blur(.55px) drop-shadow(0 20px 28px rgba(20, 28, 34, .24));
 }
 .memory-reflection .arjun-character {
-  opacity: .5;
+  opacity: .34;
 }
 .memory-reflection::after {
   content: "";
@@ -1819,6 +1828,7 @@ body.immersive .chapter-body {
   opacity: .72;
 }
 .scene-copy {
+  position: relative;
   max-width: 58rem;
   color: #392c1f;
   text-shadow: 0 1px 22px rgba(255, 244, 202, .6);
@@ -1955,22 +1965,27 @@ body.immersive .chapter-body {
   .scene-motion span { opacity: .42; }
   .privacy-presence { right: 5.2rem; bottom: 4.4rem; opacity: .18; transform: scale(.78); }
   .memoir-character {
-    width: 2.55rem;
-    height: 7.3rem;
-    bottom: 3.2rem;
-    opacity: .32;
+    width: 4.2rem;
+    height: 9.8rem;
+    bottom: 2.4rem;
+    opacity: .22;
   }
   .first-memory-characters .maya-character {
-    right: 4.1rem;
-    bottom: 3.4rem;
-    opacity: .38;
-    transform: scale(.76);
+    right: .8rem;
+    bottom: 2.1rem;
+    width: 5.4rem;
+    height: 12.4rem;
+    opacity: .24;
+    transform: scale(.9);
   }
   .first-memory-characters .arjun-character {
-    left: 1.35rem;
-    bottom: 3.2rem;
-    opacity: .22;
-    transform: scale(.62);
+    left: auto;
+    right: 6.2rem;
+    bottom: 1.8rem;
+    width: 3.2rem;
+    height: 7.5rem;
+    opacity: .1;
+    transform: scale(.72);
   }
   .couple-profile .arjun-character { left: 1.6rem; }
   .couple-profile .maya-character { right: 1.6rem; }
