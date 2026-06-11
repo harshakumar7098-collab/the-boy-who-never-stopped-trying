@@ -1,0 +1,15 @@
+{
+  "chapterId": "chapter-020",
+  "chapterNumber": 20,
+  "kind": "chapter",
+  "title": "The Girl Who Wanted The World",
+  "slug": "the-girl-who-wanted-the-world",
+  "canonicalUrl": "https://harshabooks.com/chapters/the-girl-who-wanted-the-world/",
+  "sourceFile": "content/manuscript/chapters/20-the-girl-who-wanted-the-world.md",
+  "theme": "He sees the girl who wants the world.",
+  "estimatedReadingMinutes": 4,
+  "legacyHashRoute": "#read/chapter-20",
+  "sceneKind": "horizon",
+  "sceneDescription": "Chapter 20 is presented as a privacy-safe stylized memoir scene using open horizon, sunset light, quiet distance. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
+  "privacyNotes": "Use privacy-safe, stylized, non-photorealistic character presence. Do not create final faces unless explicitly approved."
+}

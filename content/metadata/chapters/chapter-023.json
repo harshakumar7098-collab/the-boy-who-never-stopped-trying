@@ -1,0 +1,15 @@
+{
+  "chapterId": "chapter-023",
+  "chapterNumber": 23,
+  "kind": "chapter",
+  "title": "The Coffee Shop Incident",
+  "slug": "the-coffee-shop-incident",
+  "canonicalUrl": "https://harshabooks.com/chapters/the-coffee-shop-incident/",
+  "sourceFile": "content/manuscript/chapters/23-the-coffee-shop-incident.md",
+  "theme": "A small incident becomes a painful lesson.",
+  "estimatedReadingMinutes": 4,
+  "legacyHashRoute": "#read/chapter-23",
+  "sceneKind": "cafe",
+  "sceneDescription": "Chapter 23 is presented as a privacy-safe stylized memoir scene using warm table light, quiet cafe ambience, remembered objects. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
+  "privacyNotes": "Use privacy-safe, stylized, non-photorealistic character presence. Do not create final faces unless explicitly approved."
+}

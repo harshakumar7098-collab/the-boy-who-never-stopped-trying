@@ -1,0 +1,15 @@
+{
+  "chapterId": "chapter-012",
+  "chapterNumber": 12,
+  "kind": "chapter",
+  "title": "The Futures We Imagined",
+  "slug": "the-futures-we-imagined",
+  "canonicalUrl": "https://harshabooks.com/chapters/the-futures-we-imagined/",
+  "sourceFile": "content/manuscript/chapters/12-the-futures-we-imagined.md",
+  "theme": "Young love imagines every impossible tomorrow.",
+  "estimatedReadingMinutes": 4,
+  "legacyHashRoute": "#read/chapter-12",
+  "sceneKind": "horizon",
+  "sceneDescription": "Chapter 12 is presented as a privacy-safe stylized memoir scene using open horizon, sunset light, quiet distance. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
+  "privacyNotes": "Use privacy-safe, stylized, non-photorealistic character presence. Do not create final faces unless explicitly approved."
+}

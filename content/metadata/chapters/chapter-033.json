@@ -1,0 +1,15 @@
+{
+  "chapterId": "chapter-033",
+  "chapterNumber": 33,
+  "kind": "chapter",
+  "title": "The Silence After Goodbye",
+  "slug": "the-silence-after-goodbye",
+  "canonicalUrl": "https://harshabooks.com/chapters/the-silence-after-goodbye/",
+  "sourceFile": "content/manuscript/chapters/33-the-silence-after-goodbye.md",
+  "theme": "The silence becomes its own chapter.",
+  "estimatedReadingMinutes": 4,
+  "legacyHashRoute": "#read/chapter-33",
+  "sceneKind": "rain",
+  "sceneDescription": "Chapter 33 is presented as a privacy-safe stylized memoir scene using rain-softened window light, empty road, fading leaves. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
+  "privacyNotes": "Use privacy-safe, stylized, non-photorealistic character presence. Do not create final faces unless explicitly approved."
+}

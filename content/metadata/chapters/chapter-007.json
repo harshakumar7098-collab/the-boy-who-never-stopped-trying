@@ -1,0 +1,15 @@
+{
+  "chapterId": "chapter-007",
+  "chapterNumber": 7,
+  "kind": "chapter",
+  "title": "The Letter That Made Me Cry in the Street",
+  "slug": "the-letter-that-made-me-cry-in-the-street",
+  "canonicalUrl": "https://harshabooks.com/chapters/the-letter-that-made-me-cry-in-the-street/",
+  "sourceFile": "content/manuscript/chapters/07-the-letter-that-made-me-cry-in-the-street.md",
+  "theme": "A letter, a street, tears, and fragile hope.",
+  "estimatedReadingMinutes": 4,
+  "legacyHashRoute": "#read/chapter-7",
+  "sceneKind": "paper",
+  "sceneDescription": "Chapter 7 is presented as a privacy-safe stylized memoir scene using paper pages, letter texture, soft handwritten-memory movement. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
+  "privacyNotes": "Use privacy-safe, stylized, non-photorealistic character presence. Do not create final faces unless explicitly approved."
+}

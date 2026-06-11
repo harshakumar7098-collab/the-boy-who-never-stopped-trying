@@ -7,19 +7,34 @@ const $ = (selector) => document.querySelector(selector);
 const view = $("#view");
 const chapters = window.MEMOIR.chapters;
 const note = window.MEMOIR.authorNote;
-const allSections = [note, ...chapters];
+const coverSubtitle = "A Memoir About Love, Hope, Growth, and Learning to Let Go";
+function staticChapterSlug(section) {
+  if (section.kind === "epilogue") return "epilogue";
+  return section.title
+    .toLowerCase()
+    .replaceAll('"', "")
+    .replaceAll("'", "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
 
-const motifs = ["✦", "☉", "✉", "⌁", "☽", "♢"];
 const memories = [
   ["The morning that stayed", "An ordinary morning that quietly changed a life."],
   ["The glass of water", "A small kindness that stayed longer than anyone expected."],
-  ["Pebble", "A simple day that survived because it felt untouched."],
-  ["The road to Mysore", "The place where messages became memories."],
-  ["Madikeri", "Mountains, motion, and the feeling of forever."],
+  ["Pebble", "Warm afternoon comfort, preserved like a page in a scrapbook."],
+  ["The road to Mysore", "A journey where messages became weather, distance, and memory."],
+  ["Madikeri", "Mist, mountains, and the feeling that forever was possible."],
   ["The letters", "A heart trying to reach another heart without performance."],
-  ["The handmade gift", "Effort turned into an object she could hold."],
+  ["The handmade gift", "Effort made visible, something love could hold."],
   ["The silence", "The chapter after goodbye, where healing had not yet begun."],
   ["What remains", "Gratitude after love changes shape."],
+];
+
+const chapterAtmospheres = [
+  "sunrise", "phone", "calendar", "cafe", "road", "diary", "letter", "threshold", "mountain",
+  "interior", "home", "horizon", "glow", "message", "gift", "smoke", "mirror", "release",
+  "spark", "sky", "family", "paths", "coffee", "fog", "empty", "rain", "tally", "split",
+  "distance", "gate", "photo", "goodbye", "night", "letters", "sunset"
 ];
 
 function setTheme(theme) {
@@ -49,32 +64,78 @@ function chapterBySlug(slug) {
   return match ? chapters.find((chapter) => chapter.number === Number(match[1])) : firstChapter();
 }
 
-function meaningfulQuote(section) {
-  return section.quote || section.paragraphs.find((p) => p.length > 55 && p.length < 150) || section.paragraphs[0] || "";
+function chapterIndex(section) {
+  return chapters.indexOf(section);
+}
+
+function hrefForChapter(section) {
+  return `chapters/${staticChapterSlug(section)}/`;
+}
+
+function readingMinutes(section) {
+  const words = section.paragraphs.join(" ").split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.round(words / 210));
+}
+
+function completionSet() {
+  return new Set(JSON.parse(localStorage.getItem("memoir-completed") || "[]"));
+}
+
+function saveCompletion(set) {
+  localStorage.setItem("memoir-completed", JSON.stringify([...set]));
+}
+
+function markComplete(slug) {
+  const done = completionSet();
+  done.add(slug);
+  saveCompletion(done);
+}
+
+function quoteCandidates(section) {
+  const candidates = section.paragraphs.filter((p) => {
+    const longEnough = p.length >= 62 && p.length <= 170;
+    const literary = /(Sometimes|Because|The truth|Love|Memory|hope|worth|trying|forever|heartbreak|grateful|ordinary|silence|growth|remain)/i.test(p);
+    return longEnough && literary;
+  });
+  return [...new Set([section.quote, ...candidates].filter(Boolean))].slice(0, 3);
+}
+
+function paragraphClass(paragraph) {
+  if (/^(Dear|From,|With love)/i.test(paragraph)) return "letter";
+  if (/(letter|I wrote|I sent|message|diary)/i.test(paragraph) && paragraph.length > 85) return "letter";
+  if (paragraph.length < 48 && /[,.!?]$/.test(paragraph)) return "poem-line";
+  return "";
+}
+
+function atmosphereFor(chapter) {
+  if (chapter.kind === "epilogue") return "epilogue";
+  return chapterAtmospheres[(chapter.number - 1) % chapterAtmospheres.length];
 }
 
 function renderHome() {
   const bookmark = localStorage.getItem("memoir-bookmark");
   view.innerHTML = `
-    <section class="hero reveal">
-      <div class="hero-inner">
-        <p class="kicker">A public literary memoir</p>
+    <section class="hero cover-experience reveal">
+      <div class="cover-light"></div>
+      <div class="hero-inner cover-inner">
+        <p class="kicker">A premium digital memoir</p>
         <h1>${escapeHtml(window.MEMOIR.title)}</h1>
-        <p class="subtitle">${escapeHtml(window.MEMOIR.subtitle)}</p>
-        <p class="byline">Written by H.K Anand · Narrated through the character Arjun</p>
+        <p class="subtitle">${escapeHtml(coverSubtitle)}</p>
+        <p class="byline">Written by H.K Anand</p>
+        <p class="byline">Narrated through the character Arjun</p>
         <p class="note">Some names, places, timelines, and identifying details have been changed. This memoir is inspired by real emotions, memories, and experiences. Its purpose is not to decide who was right or wrong, but to hold love, effort, growth, hope, heartbreak, memory, and release with honesty.</p>
         <p class="dedication">For the memories, the conversations, the road trips, the letters, the love, the lessons, the growth, and the goodbye.</p>
-        <div class="pullquote">Some stories are written to be remembered. Others are written so they can finally be released.</div>
         <div class="hero-actions">
-          <a class="btn" href="#read/chapter-1">Begin reading</a>
-          ${bookmark ? `<a class="btn secondary" href="#read/${bookmark}">Return to bookmark</a>` : ""}
-          <a class="btn secondary" href="#toc">Table of contents</a>
+          <a class="btn" href="${hrefForChapter(firstChapter())}">Begin Reading</a>
+          ${bookmark ? `<a class="btn secondary" href="${hrefForChapter(chapterBySlug(bookmark))}">Continue Reading</a><a class="btn secondary" href="${hrefForChapter(chapterBySlug(bookmark))}">Return to Last Chapter</a>` : ""}
+          <a class="btn secondary" href="#toc">Table of Contents</a>
         </div>
       </div>
     </section>`;
 }
 
 function renderToc() {
+  const done = completionSet();
   view.innerHTML = `
     <section class="page reveal">
       <div class="section-head">
@@ -83,12 +144,12 @@ function renderToc() {
           <h2>Thirty-five chapters and an epilogue.</h2>
           <p>Each chapter keeps the manuscript intact while giving the memory its own visual atmosphere.</p>
         </div>
-        <a class="btn secondary" href="#read/chapter-1">Start</a>
+        <a class="btn secondary" href="${hrefForChapter(firstChapter())}">Start</a>
       </div>
       <div class="toc-grid">
-        ${chapters.map((chapter, index) => `
-          <a class="chapter-card" href="#read/${slugFor(chapter)}" data-motif="${motifs[index % motifs.length]}">
-            <span>${chapter.kind === "epilogue" ? "Epilogue" : `Chapter ${chapter.number}`}</span>
+        ${chapters.map((chapter) => `
+          <a class="chapter-card atmosphere-${atmosphereFor(chapter)}" href="${hrefForChapter(chapter)}" data-done="${done.has(slugFor(chapter)) ? "Complete" : ""}">
+            <span>${chapter.kind === "epilogue" ? "Epilogue" : `Chapter ${chapter.number}`} / ${readingMinutes(chapter)} min</span>
             <h3>${escapeHtml(chapter.title)}</h3>
             <p>${escapeHtml(chapter.theme)}</p>
           </a>
@@ -99,50 +160,70 @@ function renderToc() {
 
 function renderReader(slug) {
   const chapter = chapterBySlug(slug);
+  const idx = chapterIndex(chapter);
   state.chapter = chapter.number || chapters.length;
-  const idx = chapters.indexOf(chapter);
   const prev = chapters[idx - 1];
   const next = chapters[idx + 1];
-  const quote = meaningfulQuote(chapter);
+  const quotes = quoteCandidates(chapter);
+  const completed = completionSet().has(slugFor(chapter));
+  localStorage.setItem("memoir-bookmark", slugFor(chapter));
   view.innerHTML = `
-    <article class="reader-shell reveal" style="--theme-a:${chapter.colors[0]};--theme-b:${chapter.colors[1]}">
-      <header class="chapter-hero chapter-${chapter.number || "epilogue"}">
+    <article class="reader-shell reveal" data-current-slug="${slugFor(chapter)}" style="--theme-a:${chapter.colors[0]};--theme-b:${chapter.colors[1]}">
+      <header class="chapter-hero chapter-${chapter.number || "epilogue"} atmosphere-${atmosphereFor(chapter)}">
+        <div class="chapter-scene" aria-hidden="true"><span></span><span></span><span></span></div>
         <div>
-          <p class="meta">${chapter.kind === "epilogue" ? "Epilogue" : `Chapter ${chapter.number}`} · ${escapeHtml(chapter.motif)}</p>
+          <p class="meta">${chapter.kind === "epilogue" ? "Epilogue" : `Chapter ${chapter.number}`} / ${readingMinutes(chapter)} min read / <span id="chapterPercent">0%</span></p>
           <h2>${escapeHtml(chapter.title)}</h2>
+          <p class="chapter-theme">${escapeHtml(chapter.theme)}</p>
         </div>
       </header>
+      <div class="chapter-tools">
+        <button id="chapterBookmark" class="btn secondary" type="button">Bookmark Chapter</button>
+        <button id="completeChapter" class="btn secondary" type="button">${completed ? "Chapter Complete" : "Mark Complete"}</button>
+      </div>
       <div class="chapter-body">
-        <div class="pullquote">${escapeHtml(quote)}</div>
-        ${chapter.paragraphs.map((paragraph) => {
+        <div class="pullquote premium-quote">${escapeHtml(quotes[0] || "")}</div>
+        ${chapter.paragraphs.map((paragraph, i) => {
           const text = escapeHtml(paragraph);
-          const letterish = /letter|Dear |I wrote|message/i.test(paragraph) && paragraph.length > 80;
-          return `<p class="${letterish ? "letter" : ""}">${text}</p>`;
+          const cls = paragraphClass(paragraph);
+          const quote = i === Math.floor(chapter.paragraphs.length * 0.45) && quotes[1]
+            ? `<div class="pullquote inset-quote">${escapeHtml(quotes[1])}</div>`
+            : "";
+          return `${quote}<p class="${cls}">${text}</p>`;
         }).join("")}
       </div>
       <nav class="chapter-nav" aria-label="Chapter navigation">
-        ${prev ? `<a href="#read/${slugFor(prev)}">← ${prev.kind === "epilogue" ? "Epilogue" : `Chapter ${prev.number}`}<br>${escapeHtml(prev.title)}</a>` : `<a href="#toc">← Table of contents</a>`}
-        ${next ? `<a href="#read/${slugFor(next)}">${next.kind === "epilogue" ? "Epilogue" : `Chapter ${next.number}`} →<br>${escapeHtml(next.title)}</a>` : `<a href="#final">Final page →<br>The answer is yes</a>`}
+        ${prev ? `<a href="#read/${slugFor(prev)}">Previous<br>${escapeHtml(prev.title)}</a>` : `<a href="#toc">Previous<br>Table of Contents</a>`}
+        ${next ? `<a class="next-chapter" href="#read/${slugFor(next)}">Next<br>${escapeHtml(next.title)}</a>` : `<a class="next-chapter" href="#final">Final Page<br>The answer is yes</a>`}
       </nav>
     </article>`;
+
+  $("#chapterBookmark").addEventListener("click", () => {
+    localStorage.setItem("memoir-bookmark", slugFor(chapter));
+    $("#chapterBookmark").textContent = "Bookmarked";
+  });
+  $("#completeChapter").addEventListener("click", () => {
+    markComplete(slugFor(chapter));
+    $("#completeChapter").textContent = "Chapter Complete";
+  });
 }
 
 function renderTimeline() {
   const picks = [1, 2, 4, 5, 7, 9, 11, 16, 20, 23, 25, 28, 32, 33, 34, 35];
   view.innerHTML = `
-    <section class="page reveal">
+    <section class="page timeline-page reveal">
       <div class="section-head">
         <div>
           <p class="kicker">Emotional timeline</p>
           <h2>The path through memory.</h2>
-          <p>Not a chronology of dates so much as a record of what each season did to Arjun.</p>
+          <p>A visual thread through first sight, closeness, roads, change, distance, heartbreak, and gratitude.</p>
         </div>
       </div>
       <div class="timeline">
-        ${picks.map((n) => {
+        ${picks.map((n, i) => {
           const c = chapters.find((chapter) => chapter.number === n);
-          return `<a class="timeline-item" href="#read/${slugFor(c)}">
-            <p class="meta">Chapter ${c.number}</p>
+          return `<a class="timeline-item atmosphere-${atmosphereFor(c)}" href="${hrefForChapter(c)}">
+            <p class="meta">Milestone ${String(i + 1).padStart(2, "0")} / Chapter ${c.number}</p>
             <h3>${escapeHtml(c.title)}</h3>
             <p>${escapeHtml(c.theme)}</p>
           </a>`;
@@ -162,7 +243,7 @@ function renderSearch() {
         </div>
       </div>
       <div class="search-panel">
-        <input id="searchInput" type="search" value="${escapeHtml(state.query)}" placeholder="Try “Madikeri”, “letter”, “silence”, or “worth it”" autofocus>
+        <input id="searchInput" type="search" value="${escapeHtml(state.query)}" placeholder="Try Madikeri, letter, silence, or worth it" autofocus>
         <div id="results" class="results"></div>
       </div>
     </section>`;
@@ -180,7 +261,7 @@ function renderSearch() {
       const body = chapter.paragraphs.join(" ");
       const at = body.toLowerCase().indexOf(q);
       const excerpt = at >= 0 ? body.slice(Math.max(0, at - 90), at + 180) : chapter.theme;
-      return `<a class="result-card" href="#read/${slugFor(chapter)}">
+      return `<a class="result-card" href="${hrefForChapter(chapter)}">
         <p class="meta">${chapter.kind === "epilogue" ? "Epilogue" : `Chapter ${chapter.number}`}</p>
         <h3>${escapeHtml(chapter.title)}</h3>
         <p>${escapeHtml(excerpt)}...</p>
@@ -193,38 +274,46 @@ function renderSearch() {
 
 function renderMemory() {
   view.innerHTML = `
-    <section class="page reveal">
-      <div class="section-head">
-        <div>
-          <p class="kicker">In memory of us</p>
-          <h2>A memorial to what lived.</h2>
-          <p>Not a death memorial. A quiet place for conversations, road trips, letters, dreams, effort, hope, growth, and goodbyes.</p>
+    <section class="memory-cinema reveal">
+      <div class="memory-veil"></div>
+      <div class="page">
+        <div class="section-head">
+          <div>
+            <p class="kicker">In memory of us</p>
+            <h2>A memorial to what lived.</h2>
+            <p>Not a death memorial. A quiet place for memories, conversations, dreams, letters, road trips, hope, love, growth, and goodbyes.</p>
+          </div>
         </div>
+        <div class="memory-grid">
+          ${memories.map(([title, copy], i) => `<article class="memory-card">
+            <p class="meta">Memory ${String(i + 1).padStart(2, "0")}</p>
+            <h3>${escapeHtml(title)}</h3>
+            <p>${escapeHtml(copy)}</p>
+          </article>`).join("")}
+        </div>
+        <div class="pullquote">The memories remain. The lessons remain. The growth remains. The gratitude remains.</div>
       </div>
-      <div class="memory-grid">
-        ${memories.map(([title, copy], i) => `<article class="memory-card">
-          <p class="meta">Memory ${String(i + 1).padStart(2, "0")}</p>
-          <h3>${escapeHtml(title)}</h3>
-          <p>${escapeHtml(copy)}</p>
-        </article>`).join("")}
-      </div>
-      <div class="pullquote">The memories remain. The lessons remain. The growth remains. The gratitude remains.</div>
     </section>`;
 }
 
 function renderAuthor() {
   view.innerHTML = `
-    <section class="page reveal">
-      <div class="section-head">
+    <section class="page author-page reveal">
+      <div class="author-layout">
+        <div class="author-portrait" aria-label="Author photograph placeholder silhouette">
+          <span></span>
+        </div>
         <div>
           <p class="kicker">About the author</p>
           <h2>Written by H.K Anand.</h2>
-          <p>Narrated through the character Arjun.</p>
+          <div class="signature">H.K Anand</div>
+          <p class="author-bio">H.K Anand writes this memoir as an act of remembrance and release, allowing Arjun's voice to hold love, effort, misunderstanding, heartbreak, growth, and gratitude without turning the story into blame.</p>
+          <p class="author-bio">The work is intimate by design: a literary record of ordinary moments that became permanent, and a reflection on what remains after a future imagined with someone slowly becomes a lesson in letting go.</p>
         </div>
       </div>
-      <div class="chapter-body">
+      <div class="chapter-body author-note">
         ${note.paragraphs.map((p) => `<p>${escapeHtml(p)}</p>`).join("")}
-        <div class="pullquote">Some stories are written to be remembered. Others are written so they can finally be released.</div>
+        <div class="pullquote">Some stories are written to be remembered.<br>Others are written so they can finally be released.</div>
       </div>
     </section>`;
 }
@@ -232,14 +321,19 @@ function renderAuthor() {
 function renderFinal() {
   view.innerHTML = `
     <section class="ending reveal">
-      <blockquote>"If you ask me whether it was worth it, the answer is yes."</blockquote>
+      <div class="ending-clouds" aria-hidden="true"></div>
+      <blockquote><span>"If you ask me whether it was worth it,</span><span>the answer is yes."</span></blockquote>
     </section>`;
 }
 
 function route() {
   const hash = location.hash.replace(/^#\/?/, "") || "home";
-  if (hash.startsWith("read/")) renderReader(hash.split("/")[1]);
-  else if (hash === "toc") renderToc();
+  if (hash.startsWith("read/")) {
+    const chapter = chapterBySlug(hash.split("/")[1]);
+    location.href = hrefForChapter(chapter);
+    return;
+  }
+  if (hash === "toc") location.href = "chapters/";
   else if (hash === "timeline") renderTimeline();
   else if (hash === "search") renderSearch();
   else if (hash === "memory") renderMemory();
@@ -247,12 +341,23 @@ function route() {
   else if (hash === "final") renderFinal();
   else renderHome();
   window.scrollTo({ top: 0, behavior: "smooth" });
+  updateProgress();
 }
 
 function updateProgress() {
   const max = document.documentElement.scrollHeight - window.innerHeight;
   const ratio = max > 0 ? window.scrollY / max : 0;
   $("#progressBar").style.width = `${Math.max(0, Math.min(1, ratio)) * 100}%`;
+  const shell = document.querySelector(".reader-shell");
+  const percent = $("#chapterPercent");
+  if (shell && percent) {
+    const rect = shell.getBoundingClientRect();
+    const total = shell.offsetHeight - window.innerHeight;
+    const read = Math.min(Math.max(-rect.top, 0), Math.max(total, 1));
+    const chapterRatio = Math.max(0, Math.min(1, read / Math.max(total, 1)));
+    percent.textContent = `${Math.round(chapterRatio * 100)}%`;
+    if (chapterRatio > 0.92) markComplete(shell.dataset.currentSlug);
+  }
 }
 
 $("#themeToggle").addEventListener("click", () => {
@@ -263,8 +368,8 @@ $("#bookmarkBtn").addEventListener("click", () => {
   const hash = location.hash.replace(/^#\/?read\//, "");
   if (hash && location.hash.startsWith("#read/")) {
     localStorage.setItem("memoir-bookmark", hash);
-    $("#bookmarkBtn").textContent = "✓";
-    setTimeout(() => { $("#bookmarkBtn").textContent = "⌑"; }, 1100);
+    $("#bookmarkBtn").textContent = "OK";
+    setTimeout(() => { $("#bookmarkBtn").textContent = "B"; }, 1100);
   }
 });
 

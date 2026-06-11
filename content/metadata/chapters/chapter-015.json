@@ -1,0 +1,15 @@
+{
+  "chapterId": "chapter-015",
+  "chapterNumber": 15,
+  "kind": "chapter",
+  "title": "The Handmade Birthday Gift",
+  "slug": "the-handmade-birthday-gift",
+  "canonicalUrl": "https://harshabooks.com/chapters/the-handmade-birthday-gift/",
+  "sourceFile": "content/manuscript/chapters/15-the-handmade-birthday-gift.md",
+  "theme": "A gift turns effort into something visible.",
+  "estimatedReadingMinutes": 4,
+  "legacyHashRoute": "#read/chapter-15",
+  "sceneKind": "paper",
+  "sceneDescription": "Chapter 15 is presented as a privacy-safe stylized memoir scene using paper pages, letter texture, soft handwritten-memory movement. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
+  "privacyNotes": "Use privacy-safe, stylized, non-photorealistic character presence. Do not create final faces unless explicitly approved."
+}

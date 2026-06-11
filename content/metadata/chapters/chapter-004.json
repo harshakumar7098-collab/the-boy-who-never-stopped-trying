@@ -1,0 +1,15 @@
+{
+  "chapterId": "chapter-004",
+  "chapterNumber": 4,
+  "kind": "chapter",
+  "title": "Pebble",
+  "slug": "pebble",
+  "canonicalUrl": "https://harshabooks.com/chapters/pebble/",
+  "sourceFile": "content/manuscript/chapters/04-pebble.md",
+  "theme": "Pebble becomes one of the memories that survives.",
+  "estimatedReadingMinutes": 4,
+  "legacyHashRoute": "#read/chapter-4",
+  "sceneKind": "cafe",
+  "sceneDescription": "Chapter 4 is presented as a privacy-safe stylized memoir scene using warm table light, quiet cafe ambience, remembered objects. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
+  "privacyNotes": "Use privacy-safe, stylized, non-photorealistic character presence. Do not create final faces unless explicitly approved."
+}

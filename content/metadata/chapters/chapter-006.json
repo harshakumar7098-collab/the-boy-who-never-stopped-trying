@@ -1,0 +1,15 @@
+{
+  "chapterId": "chapter-006",
+  "chapterNumber": 6,
+  "kind": "chapter",
+  "title": "The Diary She Was Never Supposed To Read",
+  "slug": "the-diary-she-was-never-supposed-to-read",
+  "canonicalUrl": "https://harshabooks.com/chapters/the-diary-she-was-never-supposed-to-read/",
+  "sourceFile": "content/manuscript/chapters/06-the-diary-she-was-never-supposed-to-read.md",
+  "theme": "A diary reveals feelings before he is ready.",
+  "estimatedReadingMinutes": 4,
+  "legacyHashRoute": "#read/chapter-6",
+  "sceneKind": "paper",
+  "sceneDescription": "Chapter 6 is presented as a privacy-safe stylized memoir scene using paper pages, letter texture, soft handwritten-memory movement. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
+  "privacyNotes": "Use privacy-safe, stylized, non-photorealistic character presence. Do not create final faces unless explicitly approved."
+}

@@ -1,0 +1,31 @@
+{
+  "sceneId": "scene-chapter-001-morning-that-stayed",
+  "chapterRef": "chapter-001",
+  "sceneTitle": "The ordinary morning that stayed",
+  "scenePurpose": "Introduce the first memory as a quiet, ordinary moment that becomes emotionally permanent.",
+  "humanDescription": "A warm residential morning rendered as memory: soft sunlight, a broom, a glass of water catching light, and a privacy-safe partial presence of Maya without final facial design.",
+  "aiReadableDescription": "Chapter 1 is represented as a stylized watercolor morning in a peaceful residential setting. The visual focus is a glass of water in warm sunlight, with a broom nearby and subtle memory particles. Maya is suggested through privacy-safe, non-photorealistic partial presence rather than a final face, preserving the yellow nighty reference only as a tasteful memory detail from the manuscript.",
+  "accessibilityDescription": "A golden morning memory scene with a glass of water as the main visual anchor, a broom as an ordinary household object, soft sunlight, and gentle memory-like light particles.",
+  "charactersPresent": [
+    "character-arjun",
+    "character-maya-manne"
+  ],
+  "locationRef": "location-residential-morning-memory",
+  "objects": [
+    "glass of water",
+    "broom",
+    "yellow nighty reference",
+    "morning sunlight"
+  ],
+  "weather": "clear warm morning light",
+  "lighting": "soft golden residential sunlight",
+  "colorPalette": [
+    "warm ivory",
+    "muted gold",
+    "soft amber",
+    "gentle copper"
+  ],
+  "motionLanguage": "subtle sunlight drift, soft particles, faint water shimmer",
+  "reducedMotionEquivalent": "static golden morning composition with scene description; no moving particles or light drift",
+  "privacyNotes": "No photorealistic Maya, no final character face, no exact private home details."
+}

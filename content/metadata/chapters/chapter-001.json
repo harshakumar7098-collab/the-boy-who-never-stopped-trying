@@ -1,0 +1,15 @@
+{
+  "chapterId": "chapter-001",
+  "chapterNumber": 1,
+  "kind": "chapter",
+  "title": "The Morning That Stayed",
+  "slug": "the-morning-that-stayed",
+  "canonicalUrl": "https://harshabooks.com/chapters/the-morning-that-stayed/",
+  "sourceFile": "content/manuscript/chapters/01-the-morning-that-stayed.md",
+  "theme": "The ordinary morning that quietly changed a life.",
+  "estimatedReadingMinutes": 3,
+  "legacyHashRoute": "#read/chapter-1",
+  "sceneKind": "morning",
+  "sceneDescription": "A stylized watercolor residential morning: a glass of water catches warm sunlight near an ordinary broom, with subtle memory particles and a privacy-safe non-final suggestion of Maya without a photorealistic face.",
+  "privacyNotes": "Use privacy-safe, stylized, non-photorealistic character presence. Do not create final faces unless explicitly approved."
+}

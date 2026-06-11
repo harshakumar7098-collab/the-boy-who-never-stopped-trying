@@ -1,0 +1,15 @@
+{
+  "chapterId": "chapter-011",
+  "chapterNumber": 11,
+  "kind": "chapter",
+  "title": "The Life We Started Building",
+  "slug": "the-life-we-started-building",
+  "canonicalUrl": "https://harshabooks.com/chapters/the-life-we-started-building/",
+  "sourceFile": "content/manuscript/chapters/11-the-life-we-started-building.md",
+  "theme": "Realistic dreams become the dangerous ones.",
+  "estimatedReadingMinutes": 4,
+  "legacyHashRoute": "#read/chapter-11",
+  "sceneKind": "memory",
+  "sceneDescription": "Chapter 11 is presented as a privacy-safe stylized memoir scene using soft watercolor memory field, drifting light, symbolic objects. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
+  "privacyNotes": "Use privacy-safe, stylized, non-photorealistic character presence. Do not create final faces unless explicitly approved."
+}
