@@ -487,15 +487,36 @@ body.immersive .reader-shell { width: min(820px, calc(100% - 1rem)); }
 /* Premium memoir upgrade */
 .cover-experience::before {
   background:
-    linear-gradient(90deg, rgba(246, 239, 226, .88), rgba(246, 239, 226, .38) 46%, rgba(246, 239, 226, .12)),
-    url("assets/memory-landscape.png") center/cover no-repeat;
+    linear-gradient(90deg, rgba(14, 12, 10, .72), rgba(14, 12, 10, .28) 45%, rgba(14, 12, 10, .08)),
+    linear-gradient(0deg, rgba(12, 10, 8, .35), transparent 44%),
+    var(--hero-artwork, url("assets/artwork/home.jpeg")) center/cover no-repeat;
   animation: coverDrift 22s ease-in-out infinite alternate;
 }
 .cover-experience::after {
   background:
-    radial-gradient(circle at 23% 24%, rgba(255, 245, 203, .55), transparent 15rem),
-    radial-gradient(circle at 72% 18%, rgba(255, 255, 255, .28), transparent 18rem),
-    linear-gradient(0deg, var(--paper), transparent 48%);
+    radial-gradient(circle at 23% 24%, rgba(255, 219, 148, .24), transparent 15rem),
+    radial-gradient(circle at 72% 18%, rgba(255, 255, 255, .12), transparent 18rem),
+    linear-gradient(0deg, var(--paper), transparent 52%);
+}
+.cover-experience .kicker,
+.cover-experience h1,
+.cover-experience .subtitle,
+.cover-experience .byline,
+.cover-experience .note,
+.cover-experience .dedication {
+  color: #fff8eb;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, .48);
+}
+.cover-experience .kicker {
+  color: #f3c76f;
+}
+.cover-experience .note,
+.cover-experience .byline {
+  color: rgba(255, 248, 235, .82);
+}
+.cover-experience .btn.secondary {
+  color: #fff8eb;
+  border-color: rgba(255, 248, 235, .42);
 }
 .cover-inner > * {
   animation: coverFade .9s ease both;
@@ -518,6 +539,7 @@ body.immersive .reader-shell { width: min(820px, calc(100% - 1rem)); }
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
+  display: none;
 }
 .hero-inner {
   position: relative;
@@ -751,6 +773,39 @@ body.immersive .reader-shell { width: min(820px, calc(100% - 1rem)); }
   background:
     radial-gradient(circle at 18% 14%, var(--atmo3), transparent 12rem),
     linear-gradient(135deg, color-mix(in srgb, var(--atmo1) 88%, var(--paper-soft)), color-mix(in srgb, var(--atmo2) 70%, var(--paper-soft)));
+}
+.chapter-hero[style*="--hero-artwork"],
+.chapter-hero[class*="atmosphere-"][style*="--hero-artwork"] {
+  min-height: clamp(24rem, 58vh, 39rem);
+  color: #fff8eb;
+  background:
+    linear-gradient(90deg, rgba(12, 10, 8, .78), rgba(12, 10, 8, .42) 46%, rgba(12, 10, 8, .18)),
+    linear-gradient(0deg, rgba(10, 8, 6, .7), transparent 58%),
+    var(--hero-artwork) center/cover no-repeat;
+  box-shadow: 0 22px 70px rgba(35, 24, 18, .24);
+}
+.chapter-hero[style*="--hero-artwork"]::before {
+  background:
+    radial-gradient(circle at 24% 22%, rgba(255, 220, 150, .18), transparent 15rem),
+    linear-gradient(110deg, rgba(255, 255, 255, .12), transparent 46%);
+  mix-blend-mode: screen;
+}
+.chapter-hero[style*="--hero-artwork"]::after,
+.chapter-hero[class*="atmosphere-"][style*="--hero-artwork"]::after {
+  display: none;
+}
+.chapter-hero[style*="--hero-artwork"] .chapter-scene,
+.chapter-hero[style*="--hero-artwork"] .character-stage {
+  display: none;
+}
+.chapter-hero[style*="--hero-artwork"] h2,
+.chapter-hero[style*="--hero-artwork"] .meta,
+.chapter-hero[style*="--hero-artwork"] .chapter-theme {
+  color: #fff8eb;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, .58);
+}
+.chapter-hero[style*="--hero-artwork"] .meta {
+  color: #f3c76f;
 }
 .chapter-hero.atmosphere-road::after,
 .chapter-hero.atmosphere-distance::after,
@@ -1913,6 +1968,30 @@ body.immersive .chapter-body {
   display: inline;
   height: 0;
 }
+.living-scene-canonical[style*="--hero-artwork"] {
+  min-height: clamp(28rem, 72vh, 46rem);
+  background:
+    linear-gradient(90deg, rgba(12, 10, 8, .76), rgba(12, 10, 8, .38) 46%, rgba(12, 10, 8, .14)),
+    linear-gradient(0deg, rgba(10, 8, 6, .72), transparent 60%),
+    var(--hero-artwork) center/cover no-repeat;
+}
+.living-scene-canonical[style*="--hero-artwork"] .scene-layer,
+.living-scene-canonical[style*="--hero-artwork"] .scene-symbols,
+.living-scene-canonical[style*="--hero-artwork"] .scene-object,
+.living-scene-canonical[style*="--hero-artwork"] .privacy-presence,
+.living-scene-canonical[style*="--hero-artwork"] .character-stage {
+  display: none;
+}
+.living-scene-canonical[style*="--hero-artwork"] .scene-copy {
+  color: #fff8eb;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, .58);
+}
+.living-scene-canonical[style*="--hero-artwork"] .scene-copy .kicker {
+  color: #f3c76f;
+}
+.living-scene-canonical[style*="--hero-artwork"] .scene-copy .subtitle {
+  color: rgba(255, 248, 235, .84);
+}
 .canonical-next {
   width: min(68rem, calc(100% - 2rem));
   margin: 0 auto clamp(2rem, 6vw, 4rem);
@@ -1937,6 +2016,26 @@ body.immersive .chapter-body {
   .chapter-nav { grid-template-columns: 1fr; }
   .chapter-nav a:last-child { text-align: left; }
   h1 { font-size: clamp(3.2rem, 16vw, 5.8rem); }
+  .cover-experience {
+    min-height: calc(100svh - 58px);
+  }
+  .cover-experience::before {
+    background-position: center top;
+  }
+  .cover-experience::after {
+    background:
+      linear-gradient(90deg, rgba(12, 10, 8, .76), rgba(12, 10, 8, .28)),
+      linear-gradient(0deg, var(--paper), transparent 58%);
+  }
+  .chapter-hero[style*="--hero-artwork"] {
+    min-height: 72svh;
+    padding: 1.5rem;
+    background-position: center top;
+  }
+  .chapter-hero[style*="--hero-artwork"] h2 {
+    max-width: 10ch;
+    font-size: clamp(2.45rem, 15vw, 4.25rem);
+  }
   .author-layout { grid-template-columns: 1fr; }
   .author-portrait { max-width: 16rem; }
   .chapter-tools { position: sticky; top: 0; z-index: 5; padding: .6rem 0; background: var(--paper); }
@@ -1949,6 +2048,10 @@ body.immersive .chapter-body {
     min-height: 60vh;
     padding: 5.5rem 1.35rem 2.6rem;
     align-items: end;
+  }
+  .living-scene-canonical[style*="--hero-artwork"] {
+    min-height: 72svh;
+    background-position: center top;
   }
   .scene-copy h1 {
     max-width: 9.5ch;

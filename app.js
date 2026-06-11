@@ -72,6 +72,11 @@ function hrefForChapter(section) {
   return `chapters/${staticChapterSlug(section)}/`;
 }
 
+function artworkFor(section) {
+  if (section.kind === "epilogue") return "assets/artwork/epilogue.jpeg";
+  return `assets/artwork/chapter-${String(section.number).padStart(2, "0")}.jpeg`;
+}
+
 function readingMinutes(section) {
   const words = section.paragraphs.join(" ").split(/\s+/).filter(Boolean).length;
   return Math.max(1, Math.round(words / 210));
@@ -140,7 +145,7 @@ function characterStage(classes) {
 function renderHome() {
   const bookmark = localStorage.getItem("memoir-bookmark");
   view.innerHTML = `
-    <section class="hero cover-experience reveal">
+    <section class="hero cover-experience reveal" style="--hero-artwork:url('assets/artwork/home.jpeg')">
       <div class="home-memory-stage" aria-hidden="true">
         <span class="home-sun"></span>
         <span class="home-road"></span>
@@ -202,7 +207,7 @@ function renderReader(slug) {
   localStorage.setItem("memoir-bookmark", slugFor(chapter));
   view.innerHTML = `
     <article class="reader-shell reveal" data-current-slug="${slugFor(chapter)}" style="--theme-a:${chapter.colors[0]};--theme-b:${chapter.colors[1]}">
-      <header class="chapter-hero chapter-${chapter.number || "epilogue"} atmosphere-${atmosphereFor(chapter)}">
+      <header class="chapter-hero chapter-${chapter.number || "epilogue"} atmosphere-${atmosphereFor(chapter)}" style="--hero-artwork:url('${artworkFor(chapter)}')">
         <div class="chapter-scene" aria-hidden="true"><span></span><span></span><span></span></div>
         ${characterStage(characterSceneClasses(atmosphereFor(chapter), chapter))}
         <div>
