@@ -1448,6 +1448,376 @@ body.immersive .chapter-body {
   filter: blur(.2px);
   opacity: .72;
 }
+.character-stage {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+  --character-skin: #d7a684;
+  --character-line: rgba(54, 38, 31, .58);
+  --arjun-hair: #241d1d;
+  --maya-hair: #1f1b1d;
+  --arjun-cloth: #5b6e76;
+  --maya-cloth: #c98979;
+  --figure-shadow: rgba(55, 38, 27, .2);
+}
+.memoir-character {
+  position: absolute;
+  bottom: clamp(3.7rem, 10vw, 7.4rem);
+  width: clamp(3.2rem, 6vw, 5.1rem);
+  height: clamp(8.8rem, 18vw, 13.5rem);
+  opacity: .58;
+  filter: drop-shadow(0 20px 28px var(--figure-shadow)) saturate(.9);
+  transform-origin: 50% 100%;
+}
+.memoir-character span {
+  position: absolute;
+  display: block;
+}
+.arjun-character {
+  left: clamp(5.5rem, 17vw, 18rem);
+  transform: scale(.94);
+}
+.maya-character {
+  right: clamp(7rem, 22vw, 22rem);
+  transform: scale(1);
+}
+.character-head {
+  left: 50%;
+  top: 0;
+  width: 44%;
+  aspect-ratio: .82;
+  border: 1px solid rgba(78, 55, 43, .18);
+  border-radius: 48% 48% 43% 43%;
+  background:
+    radial-gradient(circle at 64% 42%, rgba(255,255,255,.2), transparent 26%),
+    linear-gradient(145deg, color-mix(in srgb, var(--character-skin) 88%, white), var(--character-skin));
+  transform: translateX(-50%);
+  box-shadow: inset -7px -8px 18px rgba(80, 45, 33, .1);
+}
+.character-head::before {
+  content: "";
+  position: absolute;
+  left: 23%;
+  right: 23%;
+  top: 46%;
+  height: 1px;
+  border-radius: 999px;
+  background: rgba(56, 40, 36, .34);
+  box-shadow: 0 1.1rem 0 -1px rgba(97, 58, 48, .22);
+  opacity: .42;
+}
+.character-hair {
+  left: 50%;
+  top: -.3rem;
+  width: 58%;
+  height: 26%;
+  transform: translateX(-50%);
+  background: var(--arjun-hair);
+  border-radius: 52% 52% 42% 38%;
+  box-shadow: inset 10px 0 0 rgba(255,255,255,.04);
+}
+.arjun-character .character-hair::before,
+.maya-character .character-hair::before,
+.maya-character .character-hair::after {
+  content: "";
+  position: absolute;
+  display: block;
+}
+.arjun-character .character-hair::before {
+  left: 8%;
+  bottom: -18%;
+  width: 72%;
+  height: 44%;
+  border-radius: 0 0 70% 20%;
+  background: var(--arjun-hair);
+  transform: rotate(-10deg);
+}
+.maya-character .character-hair {
+  top: -.38rem;
+  width: 66%;
+  height: 38%;
+  border-radius: 55% 55% 40% 46%;
+  background: var(--maya-hair);
+}
+.maya-character .character-hair::before {
+  left: -8%;
+  top: 58%;
+  width: 42%;
+  height: 155%;
+  border-radius: 60% 18% 62% 38%;
+  background: var(--maya-hair);
+  transform: rotate(5deg);
+}
+.maya-character .character-hair::after {
+  right: -6%;
+  top: 54%;
+  width: 40%;
+  height: 145%;
+  border-radius: 18% 60% 36% 62%;
+  background: var(--maya-hair);
+  transform: rotate(-5deg);
+}
+.character-neck {
+  left: 50%;
+  top: 21%;
+  width: 18%;
+  height: 8%;
+  transform: translateX(-50%);
+  border-radius: 0 0 999px 999px;
+  background: color-mix(in srgb, var(--character-skin) 86%, #9d6c5a);
+}
+.character-body {
+  left: 50%;
+  top: 27%;
+  width: 68%;
+  height: 58%;
+  transform: translateX(-50%);
+  border-radius: 42% 42% 20% 20%;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.12), transparent 42%),
+    linear-gradient(180deg, color-mix(in srgb, var(--arjun-cloth) 82%, white), var(--arjun-cloth));
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.1);
+}
+.maya-character .character-body {
+  width: 70%;
+  height: 61%;
+  border-radius: 44% 44% 28% 28%;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.14), transparent 44%),
+    linear-gradient(180deg, color-mix(in srgb, var(--maya-cloth) 84%, white), var(--maya-cloth));
+}
+.character-arm {
+  left: 16%;
+  top: 32%;
+  width: 16%;
+  height: 42%;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--character-skin), color-mix(in srgb, var(--character-skin) 74%, #8a5a4d));
+  transform: rotate(13deg);
+  transform-origin: 50% 8%;
+  opacity: .86;
+}
+.arjun-character .character-arm {
+  left: auto;
+  right: 15%;
+  transform: rotate(-10deg);
+}
+.first-memory-characters .maya-character {
+  right: clamp(6.2rem, 24vw, 20rem);
+  bottom: clamp(3.8rem, 10vw, 7.4rem);
+  opacity: .72;
+}
+.first-memory-characters .arjun-character {
+  left: clamp(2rem, 12vw, 12rem);
+  bottom: clamp(3.4rem, 8vw, 6rem);
+  opacity: .34;
+  transform: scale(.76);
+  filter: drop-shadow(0 18px 24px rgba(55, 38, 27, .16)) blur(.15px);
+}
+.first-memory-characters .maya-character .character-body {
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.18), transparent 46%),
+    linear-gradient(180deg, #f5dd7d, #e4b759 58%, #c99145);
+}
+.first-memory-characters .maya-character .character-arm {
+  left: 2%;
+  width: 14%;
+  height: 46%;
+  transform: rotate(54deg);
+}
+.couple-profile .arjun-character {
+  left: clamp(5rem, 18vw, 18rem);
+  opacity: .5;
+}
+.couple-profile .maya-character {
+  right: clamp(5rem, 18vw, 18rem);
+  opacity: .5;
+}
+.couple-profile .arjun-character .character-head,
+.couple-profile .maya-character .character-head {
+  border-radius: 52% 45% 45% 44%;
+}
+.couple-profile .arjun-character .character-head::before,
+.couple-profile .maya-character .character-head::before {
+  width: 18%;
+  left: auto;
+  right: 20%;
+  box-shadow: none;
+}
+.road-couple .memoir-character {
+  bottom: clamp(1.8rem, 6vw, 3.6rem);
+  width: clamp(2rem, 4vw, 3.1rem);
+  height: clamp(5.8rem, 11vw, 8.5rem);
+  opacity: .4;
+}
+.road-couple .arjun-character { left: 43%; }
+.road-couple .maya-character { right: 43%; }
+.road-couple .character-head::before {
+  opacity: 0;
+}
+.character-stage.phone-hands .memoir-character {
+  opacity: .22;
+  filter: blur(.2px) drop-shadow(0 14px 22px rgba(20, 25, 31, .18));
+}
+.character-stage.phone-hands .arjun-character {
+  left: clamp(2rem, 13vw, 12rem);
+}
+.character-stage.phone-hands .maya-character {
+  right: clamp(2rem, 13vw, 12rem);
+}
+.character-prop {
+  position: absolute;
+  display: none;
+  pointer-events: none;
+}
+.character-stage.phone-hands .character-prop.phone-hands {
+  display: block;
+  right: clamp(2.7rem, 17vw, 13rem);
+  bottom: clamp(4.2rem, 12vw, 8.2rem);
+  width: clamp(6.4rem, 14vw, 10rem);
+  height: clamp(7rem, 14vw, 10rem);
+}
+.character-prop.phone-hands::before {
+  content: "";
+  position: absolute;
+  left: 36%;
+  top: 4%;
+  width: 31%;
+  height: 72%;
+  border-radius: 1rem;
+  background:
+    radial-gradient(circle at 50% 24%, rgba(255,246,190,.62), transparent 1.9rem),
+    linear-gradient(180deg, rgba(24, 29, 36, .9), rgba(14, 18, 23, .96));
+  box-shadow: 0 0 46px rgba(255, 217, 132, .23), inset 0 0 0 4px rgba(255,255,255,.06);
+}
+.character-prop.phone-hands::after {
+  content: "";
+  position: absolute;
+  left: 16%;
+  right: 16%;
+  bottom: 2%;
+  height: 36%;
+  border-radius: 48% 48% 42% 42%;
+  background:
+    radial-gradient(ellipse at 21% 50%, var(--character-skin) 0 17%, transparent 18%),
+    radial-gradient(ellipse at 79% 50%, var(--character-skin) 0 17%, transparent 18%);
+  opacity: .78;
+}
+.character-stage.letter-hands .memoir-character {
+  opacity: .28;
+}
+.character-stage.letter-hands .character-prop.letter-hands {
+  display: block;
+  right: clamp(4rem, 18vw, 13rem);
+  bottom: clamp(5rem, 14vw, 9rem);
+  width: clamp(8.5rem, 20vw, 14rem);
+  height: clamp(7rem, 16vw, 11rem);
+  transform: rotate(-4deg);
+}
+.character-prop.letter-hands::before {
+  content: "";
+  position: absolute;
+  inset: 0 12%;
+  border: 1px solid rgba(92, 69, 45, .16);
+  border-radius: .28rem;
+  background:
+    repeating-linear-gradient(180deg, transparent 0 1rem, rgba(107, 81, 54, .08) 1.05rem 1.1rem),
+    linear-gradient(145deg, rgba(255,252,239,.86), rgba(235,216,181,.74));
+  box-shadow: 0 18px 48px rgba(55, 38, 27, .14);
+}
+.character-prop.letter-hands::after {
+  content: "";
+  position: absolute;
+  left: 2%;
+  right: 2%;
+  bottom: -5%;
+  height: 34%;
+  border-radius: 45%;
+  background:
+    radial-gradient(ellipse at 18% 54%, var(--character-skin) 0 15%, transparent 16%),
+    radial-gradient(ellipse at 82% 54%, var(--character-skin) 0 15%, transparent 16%);
+  opacity: .72;
+}
+.memory-reflection .maya-character {
+  opacity: .2;
+  transform: scale(.9) translateX(1.5rem);
+  filter: blur(.55px) drop-shadow(0 20px 28px rgba(20, 28, 34, .24));
+}
+.memory-reflection .arjun-character {
+  opacity: .5;
+}
+.memory-reflection::after {
+  content: "";
+  position: absolute;
+  right: 8%;
+  bottom: 0;
+  width: min(32rem, 68vw);
+  height: 18%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(255,255,255,.14), transparent 68%);
+  filter: blur(10px);
+}
+.living-scene-rain .character-stage,
+.living-scene-night .character-stage,
+.living-scene-silence .character-stage,
+.living-scene-dusk .character-stage,
+.living-scene-last-us .character-stage,
+.living-scene-ghost .character-stage {
+  --arjun-cloth: #3f505d;
+  --maya-cloth: #78656b;
+  --figure-shadow: rgba(0, 0, 0, .25);
+}
+.living-scene-cafe .character-stage,
+.living-scene-cafe-distance .character-stage {
+  --arjun-cloth: #51616a;
+  --maya-cloth: #b47469;
+}
+.living-scene-mountain .character-stage,
+.living-scene-road .character-stage,
+.living-scene-split-road .character-stage,
+.living-scene-distance .character-stage,
+.living-scene-release-road .character-stage {
+  --arjun-cloth: #4c6170;
+  --maya-cloth: #9f746d;
+}
+.home-couple {
+  z-index: 1;
+}
+.home-couple .memoir-character {
+  bottom: clamp(5rem, 10vw, 7rem);
+  opacity: .25;
+}
+.home-couple .arjun-character {
+  left: auto;
+  right: clamp(12rem, 31vw, 26rem);
+  transform: scale(.82);
+}
+.home-couple .maya-character {
+  right: clamp(6rem, 18vw, 16rem);
+  transform: scale(.86);
+}
+.chapter-hero .character-stage {
+  z-index: 0;
+}
+.chapter-hero .memoir-character {
+  bottom: 1.2rem;
+  opacity: .28;
+}
+.chapter-hero .arjun-character {
+  left: auto;
+  right: clamp(9rem, 26vw, 18rem);
+}
+.chapter-hero .maya-character {
+  right: clamp(4rem, 15vw, 11rem);
+}
+.chapter-hero .character-stage.phone-hands .character-prop.phone-hands,
+.chapter-hero .character-stage.letter-hands .character-prop.letter-hands {
+  right: clamp(3rem, 16vw, 9rem);
+  bottom: 2.2rem;
+  opacity: .72;
+}
 .scene-copy {
   max-width: 58rem;
   color: #392c1f;
@@ -1584,6 +1954,55 @@ body.immersive .chapter-body {
   .scene-anchor { right: 1.2rem; bottom: 4.6rem; opacity: .42; transform: scale(.78); }
   .scene-motion span { opacity: .42; }
   .privacy-presence { right: 5.2rem; bottom: 4.4rem; opacity: .18; transform: scale(.78); }
+  .memoir-character {
+    width: 2.55rem;
+    height: 7.3rem;
+    bottom: 3.2rem;
+    opacity: .32;
+  }
+  .first-memory-characters .maya-character {
+    right: 4.1rem;
+    bottom: 3.4rem;
+    opacity: .38;
+    transform: scale(.76);
+  }
+  .first-memory-characters .arjun-character {
+    left: 1.35rem;
+    bottom: 3.2rem;
+    opacity: .22;
+    transform: scale(.62);
+  }
+  .couple-profile .arjun-character { left: 1.6rem; }
+  .couple-profile .maya-character { right: 1.6rem; }
+  .road-couple .arjun-character { left: 38%; }
+  .road-couple .maya-character { right: 38%; }
+  .character-stage.phone-hands .character-prop.phone-hands {
+    right: 1.15rem;
+    bottom: 3.25rem;
+    width: 5.6rem;
+    height: 6.2rem;
+    opacity: .5;
+  }
+  .character-stage.letter-hands .character-prop.letter-hands {
+    right: 1.25rem;
+    bottom: 3.4rem;
+    width: 6.7rem;
+    height: 5.6rem;
+    opacity: .45;
+  }
+  .home-couple .arjun-character {
+    right: 7rem;
+    bottom: 4rem;
+  }
+  .home-couple .maya-character {
+    right: 2.6rem;
+    bottom: 4rem;
+  }
+  .chapter-hero .memoir-character {
+    width: 2.35rem;
+    height: 6.7rem;
+    opacity: .2;
+  }
   .scene-ordinary { display: none; }
   .chapter-prose {
     width: min(36rem, calc(100% - 2.8rem));

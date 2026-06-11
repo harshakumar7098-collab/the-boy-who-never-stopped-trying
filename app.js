@@ -112,6 +112,31 @@ function atmosphereFor(chapter) {
   return chapterAtmospheres[(chapter.number - 1) % chapterAtmospheres.length];
 }
 
+function characterSceneClasses(scene, chapter) {
+  const classes = ["character-stage", "couple-character-scene", `character-scene-${scene}`];
+  if (chapter?.number === 1) classes.push("first-memory-characters");
+  if (["road", "distance", "sunset", "epilogue", "mountain"].includes(scene)) classes.push("road-couple");
+  if (["cafe", "threshold", "interior", "home", "horizon", "sky", "family", "paths", "spark"].includes(scene)) classes.push("couple-profile");
+  if (["phone", "message", "calendar", "glow"].includes(scene)) classes.push("phone-hands");
+  if (["diary", "letter", "gift", "letters", "tally"].includes(scene)) classes.push("letter-hands");
+  if (["rain", "night", "goodbye", "empty", "fog", "mirror", "smoke", "release", "gate", "photo"].includes(scene)) classes.push("memory-reflection");
+  return classes.join(" ");
+}
+
+function characterStage(classes) {
+  return `
+    <div class="${classes}" aria-hidden="true" data-character-treatment="consistent anime-inspired memoir characters: Arjun and Maya / Manne, privacy-safe, non-photorealistic">
+      <div class="memoir-character arjun-character arjun-silhouette">
+        <span class="character-head"></span><span class="character-hair"></span><span class="character-neck"></span><span class="character-body"></span><span class="character-arm"></span>
+      </div>
+      <div class="memoir-character maya-character maya-silhouette">
+        <span class="character-head"></span><span class="character-hair"></span><span class="character-neck"></span><span class="character-body"></span><span class="character-arm"></span>
+      </div>
+      <div class="character-prop phone-hands" role="presentation"></div>
+      <div class="character-prop letter-hands" role="presentation"></div>
+    </div>`;
+}
+
 function renderHome() {
   const bookmark = localStorage.getItem("memoir-bookmark");
   view.innerHTML = `
@@ -122,6 +147,7 @@ function renderHome() {
         <span class="home-letter"></span>
         <span class="home-glass"></span>
         <span class="home-leaf"></span>
+        ${characterStage("character-stage couple-character-scene couple-profile memory-reflection home-couple")}
       </div>
       <div class="cover-light"></div>
       <div class="hero-inner cover-inner">
@@ -178,6 +204,7 @@ function renderReader(slug) {
     <article class="reader-shell reveal" data-current-slug="${slugFor(chapter)}" style="--theme-a:${chapter.colors[0]};--theme-b:${chapter.colors[1]}">
       <header class="chapter-hero chapter-${chapter.number || "epilogue"} atmosphere-${atmosphereFor(chapter)}">
         <div class="chapter-scene" aria-hidden="true"><span></span><span></span><span></span></div>
+        ${characterStage(characterSceneClasses(atmosphereFor(chapter), chapter))}
         <div>
           <p class="meta">${chapter.kind === "epilogue" ? "Epilogue" : `Chapter ${chapter.number}`} / ${readingMinutes(chapter)} min read / <span id="chapterPercent">0%</span></p>
           <h2>${escapeHtml(chapter.title)}</h2>
