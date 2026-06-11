@@ -3,9 +3,14 @@
   "canonicalUrl": "https://harshabooks.com/chapters/the-handmade-birthday-gift/",
   "title": "The Handmade Birthday Gift",
   "summary": "Chapter 15 of The Boy Who Never Stopped Trying is titled The Handmade Birthday Gift. Theme: A gift turns effort into something visible.",
-  "sceneDescription": "Chapter 15 is presented as a privacy-safe stylized memoir scene using paper pages, letter texture, soft handwritten-memory movement. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
+  "sceneDescription": "The handmade birthday gift is effort made visible: paper, ribbon, and care held in the hands.",
   "manuscriptIntegrity": "Do not rewrite, correct, shorten, expand, or alter manuscript paragraphs.",
   "characters": [
     "OPEN: derive from manuscript during later continuity pass"
-  ]
+  ],
+  "sceneKind": "gift",
+  "visualAnchor": "handmade gift and folded paper",
+  "livingMotion": "subtle ribbon/page lift",
+  "privacySafeTreatment": "Use symbolic environments, silhouettes, partial presence, hands, shadows, reflections, and objects; do not create photorealistic faces.",
+  "futureAssetNote": "Future artwork slot: stylized watercolor literary-manga / visual-novel scene, privacy-safe, consistent character presence, no photorealistic identity replication."
 }

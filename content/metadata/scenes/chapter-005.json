@@ -3,6 +3,12 @@
   "chapterId": "chapter-005",
   "canonicalUrl": "https://harshabooks.com/chapters/the-road-to-mysore/",
   "livingSceneLayer": "road",
-  "aiReadableDescription": "Chapter 5 is presented as a privacy-safe stylized memoir scene using distant road, moving clouds, travel light. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
-  "reducedMotionEquivalent": "Static watercolor-inspired composition with no continuous motion."
+  "aiReadableDescription": "The road to Mysore becomes a moving memory of distance, messages, horizon, and shared anticipation.",
+  "reducedMotionEquivalent": "Static watercolor-inspired composition with no continuous motion.",
+  "sceneKind": "road",
+  "sceneDescription": "The road to Mysore becomes a moving memory of distance, messages, horizon, and shared anticipation.",
+  "visualAnchor": "distant road and passing horizon",
+  "livingMotion": "slow road drift and moving clouds",
+  "privacySafeTreatment": "Use symbolic environments, silhouettes, partial presence, hands, shadows, reflections, and objects; do not create photorealistic faces.",
+  "futureAssetNote": "Future artwork slot: stylized watercolor literary-manga / visual-novel scene, privacy-safe, consistent character presence, no photorealistic identity replication."
 }

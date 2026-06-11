@@ -3,9 +3,14 @@
   "canonicalUrl": "https://harshabooks.com/chapters/the-changes-nobody-saw/",
   "title": "The Changes Nobody Saw",
   "summary": "Chapter 17 of The Boy Who Never Stopped Trying is titled The Changes Nobody Saw. Theme: The unseen work of becoming softer.",
-  "sceneDescription": "Chapter 17 is presented as a privacy-safe stylized memoir scene using soft watercolor memory field, drifting light, symbolic objects. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
+  "sceneDescription": "The changes nobody saw are quiet reflection: softened light, mirror-like water, and private becoming.",
   "manuscriptIntegrity": "Do not rewrite, correct, shorten, expand, or alter manuscript paragraphs.",
   "characters": [
     "OPEN: derive from manuscript during later continuity pass"
-  ]
+  ],
+  "sceneKind": "reflection",
+  "visualAnchor": "soft reflection and changing silhouette",
+  "livingMotion": "slow reflection ripple",
+  "privacySafeTreatment": "Use symbolic environments, silhouettes, partial presence, hands, shadows, reflections, and objects; do not create photorealistic faces.",
+  "futureAssetNote": "Future artwork slot: stylized watercolor literary-manga / visual-novel scene, privacy-safe, consistent character presence, no photorealistic identity replication."
 }

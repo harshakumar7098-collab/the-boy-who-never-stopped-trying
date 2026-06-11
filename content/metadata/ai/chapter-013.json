@@ -3,9 +3,14 @@
   "canonicalUrl": "https://harshabooks.com/chapters/the-first-time-she-called-me-baby/",
   "title": "The First Time She Called Me Baby",
   "summary": "Chapter 13 of The Boy Who Never Stopped Trying is titled The First Time She Called Me Baby. Theme: One small word becomes proof of closeness.",
-  "sceneDescription": "Chapter 13 is presented as a privacy-safe stylized memoir scene using open horizon, sunset light, quiet distance. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
+  "sceneDescription": "One small word becomes proof of closeness, shown as a warm intimate glow around a remembered message.",
   "manuscriptIntegrity": "Do not rewrite, correct, shorten, expand, or alter manuscript paragraphs.",
   "characters": [
     "OPEN: derive from manuscript during later continuity pass"
-  ]
+  ],
+  "sceneKind": "glow",
+  "visualAnchor": "soft word-glow and close light",
+  "livingMotion": "small pulse of warmth",
+  "privacySafeTreatment": "Use symbolic environments, silhouettes, partial presence, hands, shadows, reflections, and objects; do not create photorealistic faces.",
+  "futureAssetNote": "Future artwork slot: stylized watercolor literary-manga / visual-novel scene, privacy-safe, consistent character presence, no photorealistic identity replication."
 }

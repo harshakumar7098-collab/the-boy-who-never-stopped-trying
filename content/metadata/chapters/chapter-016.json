@@ -9,7 +9,11 @@
   "theme": "Love becomes a reason to change a habit.",
   "estimatedReadingMinutes": 4,
   "legacyHashRoute": "#read/chapter-16",
-  "sceneKind": "horizon",
-  "sceneDescription": "Chapter 16 is presented as a privacy-safe stylized memoir scene using open horizon, sunset light, quiet distance. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
-  "privacyNotes": "Use privacy-safe, stylized, non-photorealistic character presence. Do not create final faces unless explicitly approved."
+  "sceneKind": "smoke",
+  "sceneDescription": "Six years of smoke becomes a fading habit, an old-self shadow dissolving into change.",
+  "privacyNotes": "Use privacy-safe, stylized, non-photorealistic character presence. Do not create final faces unless explicitly approved.",
+  "visualAnchor": "smoke fading from an old shadow",
+  "livingMotion": "smoke thinning upward",
+  "privacySafeTreatment": "Use symbolic environments, silhouettes, partial presence, hands, shadows, reflections, and objects; do not create photorealistic faces.",
+  "futureAssetNote": "Future artwork slot: stylized watercolor literary-manga / visual-novel scene, privacy-safe, consistent character presence, no photorealistic identity replication."
 }

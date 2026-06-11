@@ -3,6 +3,12 @@
   "chapterId": "chapter-010",
   "canonicalUrl": "https://harshabooks.com/chapters/becoming-us/",
   "livingSceneLayer": "horizon",
-  "aiReadableDescription": "Chapter 10 is presented as a privacy-safe stylized memoir scene using open horizon, sunset light, quiet distance. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
-  "reducedMotionEquivalent": "Static watercolor-inspired composition with no continuous motion."
+  "aiReadableDescription": "Becoming us is warm interior closeness, where love arrives without a formal announcement.",
+  "reducedMotionEquivalent": "Static watercolor-inspired composition with no continuous motion.",
+  "sceneKind": "warm-room",
+  "sceneDescription": "Becoming us is warm interior closeness, where love arrives without a formal announcement.",
+  "visualAnchor": "warm room light and two privacy-safe presences",
+  "livingMotion": "slow room-light pulse",
+  "privacySafeTreatment": "Use symbolic environments, silhouettes, partial presence, hands, shadows, reflections, and objects; do not create photorealistic faces.",
+  "futureAssetNote": "Future artwork slot: stylized watercolor literary-manga / visual-novel scene, privacy-safe, consistent character presence, no photorealistic identity replication."
 }

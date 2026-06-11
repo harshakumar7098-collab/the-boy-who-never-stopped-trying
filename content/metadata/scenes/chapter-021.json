@@ -3,6 +3,12 @@
   "chapterId": "chapter-021",
   "canonicalUrl": "https://harshabooks.com/chapters/family-first/",
   "livingSceneLayer": "horizon",
-  "aiReadableDescription": "Chapter 21 is presented as a privacy-safe stylized memoir scene using open horizon, sunset light, quiet distance. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
-  "reducedMotionEquivalent": "Static watercolor-inspired composition with no continuous motion."
+  "aiReadableDescription": "Family first is a home-threshold memory, where love meets responsibility and priority.",
+  "reducedMotionEquivalent": "Static watercolor-inspired composition with no continuous motion.",
+  "sceneKind": "home",
+  "sceneDescription": "Family first is a home-threshold memory, where love meets responsibility and priority.",
+  "visualAnchor": "home light and threshold line",
+  "livingMotion": "curtain-light movement",
+  "privacySafeTreatment": "Use symbolic environments, silhouettes, partial presence, hands, shadows, reflections, and objects; do not create photorealistic faces.",
+  "futureAssetNote": "Future artwork slot: stylized watercolor literary-manga / visual-novel scene, privacy-safe, consistent character presence, no photorealistic identity replication."
 }

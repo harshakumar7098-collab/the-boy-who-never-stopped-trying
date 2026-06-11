@@ -3,6 +3,12 @@
   "chapterId": "chapter-024",
   "canonicalUrl": "https://harshabooks.com/chapters/the-ghost-of-her-past/",
   "livingSceneLayer": "rain",
-  "aiReadableDescription": "Chapter 24 is presented as a privacy-safe stylized memoir scene using rain-softened window light, empty road, fading leaves. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
-  "reducedMotionEquivalent": "Static watercolor-inspired composition with no continuous motion."
+  "aiReadableDescription": "The ghost of her past becomes a cool memory layer, where old pain sits beside present love.",
+  "reducedMotionEquivalent": "Static watercolor-inspired composition with no continuous motion.",
+  "sceneKind": "ghost",
+  "sceneDescription": "The ghost of her past becomes a cool memory layer, where old pain sits beside present love.",
+  "visualAnchor": "fogged reflection and distant shadow",
+  "livingMotion": "slow mist crossing",
+  "privacySafeTreatment": "Use symbolic environments, silhouettes, partial presence, hands, shadows, reflections, and objects; do not create photorealistic faces.",
+  "futureAssetNote": "Future artwork slot: stylized watercolor literary-manga / visual-novel scene, privacy-safe, consistent character presence, no photorealistic identity replication."
 }

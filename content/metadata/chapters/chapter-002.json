@@ -9,7 +9,11 @@
   "theme": "The number he could not text until hope became action.",
   "estimatedReadingMinutes": 4,
   "legacyHashRoute": "#read/chapter-2",
-  "sceneKind": "memory",
-  "sceneDescription": "Chapter 2 is presented as a privacy-safe stylized memoir scene using soft watercolor memory field, drifting light, symbolic objects. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
-  "privacyNotes": "Use privacy-safe, stylized, non-photorealistic character presence. Do not create final faces unless explicitly approved."
+  "sceneKind": "message",
+  "sceneDescription": "A phone-message memory: the number he cannot text, hope held inside a glowing screen.",
+  "privacyNotes": "Use privacy-safe, stylized, non-photorealistic character presence. Do not create final faces unless explicitly approved.",
+  "visualAnchor": "phone glow and unsent-message tension",
+  "livingMotion": "soft notification pulse",
+  "privacySafeTreatment": "Use symbolic environments, silhouettes, partial presence, hands, shadows, reflections, and objects; do not create photorealistic faces.",
+  "futureAssetNote": "Future artwork slot: stylized watercolor literary-manga / visual-novel scene, privacy-safe, consistent character presence, no photorealistic identity replication."
 }

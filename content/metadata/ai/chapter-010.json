@@ -3,9 +3,14 @@
   "canonicalUrl": "https://harshabooks.com/chapters/becoming-us/",
   "title": "Becoming Us",
   "summary": "Chapter 10 of The Boy Who Never Stopped Trying is titled Becoming Us. Theme: Love arrives without a formal beginning.",
-  "sceneDescription": "Chapter 10 is presented as a privacy-safe stylized memoir scene using open horizon, sunset light, quiet distance. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
+  "sceneDescription": "Becoming us is warm interior closeness, where love arrives without a formal announcement.",
   "manuscriptIntegrity": "Do not rewrite, correct, shorten, expand, or alter manuscript paragraphs.",
   "characters": [
     "OPEN: derive from manuscript during later continuity pass"
-  ]
+  ],
+  "sceneKind": "warm-room",
+  "visualAnchor": "warm room light and two privacy-safe presences",
+  "livingMotion": "slow room-light pulse",
+  "privacySafeTreatment": "Use symbolic environments, silhouettes, partial presence, hands, shadows, reflections, and objects; do not create photorealistic faces.",
+  "futureAssetNote": "Future artwork slot: stylized watercolor literary-manga / visual-novel scene, privacy-safe, consistent character presence, no photorealistic identity replication."
 }

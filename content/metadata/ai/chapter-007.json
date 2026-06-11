@@ -3,9 +3,14 @@
   "canonicalUrl": "https://harshabooks.com/chapters/the-letter-that-made-me-cry-in-the-street/",
   "title": "The Letter That Made Me Cry in the Street",
   "summary": "Chapter 7 of The Boy Who Never Stopped Trying is titled The Letter That Made Me Cry in the Street. Theme: A letter, a street, tears, and fragile hope.",
-  "sceneDescription": "Chapter 7 is presented as a privacy-safe stylized memoir scene using paper pages, letter texture, soft handwritten-memory movement. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
+  "sceneDescription": "A letter and a street become a fragile emotional scene of tears, hope, and paper held in public.",
   "manuscriptIntegrity": "Do not rewrite, correct, shorten, expand, or alter manuscript paragraphs.",
   "characters": [
     "OPEN: derive from manuscript during later continuity pass"
-  ]
+  ],
+  "sceneKind": "letter",
+  "visualAnchor": "letter page against street light",
+  "livingMotion": "ink shimmer and page lift",
+  "privacySafeTreatment": "Use symbolic environments, silhouettes, partial presence, hands, shadows, reflections, and objects; do not create photorealistic faces.",
+  "futureAssetNote": "Future artwork slot: stylized watercolor literary-manga / visual-novel scene, privacy-safe, consistent character presence, no photorealistic identity replication."
 }

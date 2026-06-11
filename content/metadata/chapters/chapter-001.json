@@ -10,6 +10,10 @@
   "estimatedReadingMinutes": 3,
   "legacyHashRoute": "#read/chapter-1",
   "sceneKind": "morning",
-  "sceneDescription": "A stylized watercolor residential morning: a glass of water catches warm sunlight near an ordinary broom, with subtle memory particles and a privacy-safe non-final suggestion of Maya without a photorealistic face.",
-  "privacyNotes": "Use privacy-safe, stylized, non-photorealistic character presence. Do not create final faces unless explicitly approved."
+  "sceneDescription": "The first remembered morning: golden room light, a glass of water, and privacy-safe partial presence.",
+  "privacyNotes": "Use privacy-safe, stylized, non-photorealistic character presence. Do not create final faces unless explicitly approved.",
+  "visualAnchor": "glass of water in warm residential morning light",
+  "livingMotion": "slow sunlight drift and faint memory particles",
+  "privacySafeTreatment": "Use symbolic environments, silhouettes, partial presence, hands, shadows, reflections, and objects; do not create photorealistic faces.",
+  "futureAssetNote": "Future artwork slot: stylized watercolor literary-manga / visual-novel scene, privacy-safe, consistent character presence, no photorealistic identity replication."
 }

@@ -3,9 +3,14 @@
   "canonicalUrl": "https://harshabooks.com/chapters/the-diary-she-was-never-supposed-to-read/",
   "title": "The Diary She Was Never Supposed To Read",
   "summary": "Chapter 6 of The Boy Who Never Stopped Trying is titled The Diary She Was Never Supposed To Read. Theme: A diary reveals feelings before he is ready.",
-  "sceneDescription": "Chapter 6 is presented as a privacy-safe stylized memoir scene using paper pages, letter texture, soft handwritten-memory movement. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
+  "sceneDescription": "The diary becomes an intimate paper memory, where private feelings are exposed before he is ready.",
   "manuscriptIntegrity": "Do not rewrite, correct, shorten, expand, or alter manuscript paragraphs.",
   "characters": [
     "OPEN: derive from manuscript during later continuity pass"
-  ]
+  ],
+  "sceneKind": "paper",
+  "visualAnchor": "diary page and ink texture",
+  "livingMotion": "page-light reveal",
+  "privacySafeTreatment": "Use symbolic environments, silhouettes, partial presence, hands, shadows, reflections, and objects; do not create photorealistic faces.",
+  "futureAssetNote": "Future artwork slot: stylized watercolor literary-manga / visual-novel scene, privacy-safe, consistent character presence, no photorealistic identity replication."
 }

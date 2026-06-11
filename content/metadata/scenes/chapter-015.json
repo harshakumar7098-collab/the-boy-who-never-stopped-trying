@@ -3,6 +3,12 @@
   "chapterId": "chapter-015",
   "canonicalUrl": "https://harshabooks.com/chapters/the-handmade-birthday-gift/",
   "livingSceneLayer": "paper",
-  "aiReadableDescription": "Chapter 15 is presented as a privacy-safe stylized memoir scene using paper pages, letter texture, soft handwritten-memory movement. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
-  "reducedMotionEquivalent": "Static watercolor-inspired composition with no continuous motion."
+  "aiReadableDescription": "The handmade birthday gift is effort made visible: paper, ribbon, and care held in the hands.",
+  "reducedMotionEquivalent": "Static watercolor-inspired composition with no continuous motion.",
+  "sceneKind": "gift",
+  "sceneDescription": "The handmade birthday gift is effort made visible: paper, ribbon, and care held in the hands.",
+  "visualAnchor": "handmade gift and folded paper",
+  "livingMotion": "subtle ribbon/page lift",
+  "privacySafeTreatment": "Use symbolic environments, silhouettes, partial presence, hands, shadows, reflections, and objects; do not create photorealistic faces.",
+  "futureAssetNote": "Future artwork slot: stylized watercolor literary-manga / visual-novel scene, privacy-safe, consistent character presence, no photorealistic identity replication."
 }

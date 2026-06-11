@@ -3,6 +3,12 @@
   "chapterId": "chapter-016",
   "canonicalUrl": "https://harshabooks.com/chapters/six-years-of-smoke/",
   "livingSceneLayer": "horizon",
-  "aiReadableDescription": "Chapter 16 is presented as a privacy-safe stylized memoir scene using open horizon, sunset light, quiet distance. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
-  "reducedMotionEquivalent": "Static watercolor-inspired composition with no continuous motion."
+  "aiReadableDescription": "Six years of smoke becomes a fading habit, an old-self shadow dissolving into change.",
+  "reducedMotionEquivalent": "Static watercolor-inspired composition with no continuous motion.",
+  "sceneKind": "smoke",
+  "sceneDescription": "Six years of smoke becomes a fading habit, an old-self shadow dissolving into change.",
+  "visualAnchor": "smoke fading from an old shadow",
+  "livingMotion": "smoke thinning upward",
+  "privacySafeTreatment": "Use symbolic environments, silhouettes, partial presence, hands, shadows, reflections, and objects; do not create photorealistic faces.",
+  "futureAssetNote": "Future artwork slot: stylized watercolor literary-manga / visual-novel scene, privacy-safe, consistent character presence, no photorealistic identity replication."
 }

@@ -3,6 +3,12 @@
   "chapterId": "chapter-001",
   "canonicalUrl": "https://harshabooks.com/chapters/the-morning-that-stayed/",
   "livingSceneLayer": "morning",
-  "aiReadableDescription": "A stylized watercolor residential morning: a glass of water catches warm sunlight near an ordinary broom, with subtle memory particles and a privacy-safe non-final suggestion of Maya without a photorealistic face.",
-  "reducedMotionEquivalent": "Static watercolor-inspired composition with no continuous motion."
+  "aiReadableDescription": "The first remembered morning: golden room light, a glass of water, and privacy-safe partial presence.",
+  "reducedMotionEquivalent": "Static watercolor-inspired composition with no continuous motion.",
+  "sceneKind": "morning",
+  "sceneDescription": "The first remembered morning: golden room light, a glass of water, and privacy-safe partial presence.",
+  "visualAnchor": "glass of water in warm residential morning light",
+  "livingMotion": "slow sunlight drift and faint memory particles",
+  "privacySafeTreatment": "Use symbolic environments, silhouettes, partial presence, hands, shadows, reflections, and objects; do not create photorealistic faces.",
+  "futureAssetNote": "Future artwork slot: stylized watercolor literary-manga / visual-novel scene, privacy-safe, consistent character presence, no photorealistic identity replication."
 }

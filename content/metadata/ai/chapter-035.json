@@ -3,9 +3,14 @@
   "canonicalUrl": "https://harshabooks.com/chapters/what-remains/",
   "title": "What Remains",
   "summary": "Chapter 35 of The Boy Who Never Stopped Trying is titled What Remains. Theme: Loss becomes growth, gratitude, and a larger self.",
-  "sceneDescription": "Chapter 35 is presented as a privacy-safe stylized memoir scene using open horizon, sunset light, quiet distance. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
+  "sceneDescription": "What remains opens into sunset, gratitude, growth, and a wider road beyond loss.",
   "manuscriptIntegrity": "Do not rewrite, correct, shorten, expand, or alter manuscript paragraphs.",
   "characters": [
     "OPEN: derive from manuscript during later continuity pass"
-  ]
+  ],
+  "sceneKind": "sunset",
+  "visualAnchor": "sunset horizon and open road",
+  "livingMotion": "leaves drifting in warm air",
+  "privacySafeTreatment": "Use symbolic environments, silhouettes, partial presence, hands, shadows, reflections, and objects; do not create photorealistic faces.",
+  "futureAssetNote": "Future artwork slot: stylized watercolor literary-manga / visual-novel scene, privacy-safe, consistent character presence, no photorealistic identity replication."
 }

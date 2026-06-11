@@ -3,6 +3,12 @@
   "chapterId": "chapter-020",
   "canonicalUrl": "https://harshabooks.com/chapters/the-girl-who-wanted-the-world/",
   "livingSceneLayer": "horizon",
-  "aiReadableDescription": "Chapter 20 is presented as a privacy-safe stylized memoir scene using open horizon, sunset light, quiet distance. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
-  "reducedMotionEquivalent": "Static watercolor-inspired composition with no continuous motion."
+  "aiReadableDescription": "The girl who wanted the world is open sky, distance, ambition, and a horizon larger than the relationship.",
+  "reducedMotionEquivalent": "Static watercolor-inspired composition with no continuous motion.",
+  "sceneKind": "sky",
+  "sceneDescription": "The girl who wanted the world is open sky, distance, ambition, and a horizon larger than the relationship.",
+  "visualAnchor": "wide sky and far horizon",
+  "livingMotion": "cloud drift",
+  "privacySafeTreatment": "Use symbolic environments, silhouettes, partial presence, hands, shadows, reflections, and objects; do not create photorealistic faces.",
+  "futureAssetNote": "Future artwork slot: stylized watercolor literary-manga / visual-novel scene, privacy-safe, consistent character presence, no photorealistic identity replication."
 }

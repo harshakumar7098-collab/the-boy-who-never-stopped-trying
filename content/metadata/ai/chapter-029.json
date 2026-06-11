@@ -3,9 +3,14 @@
   "canonicalUrl": "https://harshabooks.com/chapters/the-distance-between-us/",
   "title": "The Distance Between Us",
   "summary": "Chapter 29 of The Boy Who Never Stopped Trying is titled The Distance Between Us. Theme: Distance becomes measured in dreams and expectations.",
-  "sceneDescription": "Chapter 29 is presented as a privacy-safe stylized memoir scene using distant road, moving clouds, travel light. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
+  "sceneDescription": "Distance becomes emotional measurement: far lights, unsaid words, and widening space.",
   "manuscriptIntegrity": "Do not rewrite, correct, shorten, expand, or alter manuscript paragraphs.",
   "characters": [
     "OPEN: derive from manuscript during later continuity pass"
-  ]
+  ],
+  "sceneKind": "distance",
+  "visualAnchor": "far horizon and separated lights",
+  "livingMotion": "slow horizon drift",
+  "privacySafeTreatment": "Use symbolic environments, silhouettes, partial presence, hands, shadows, reflections, and objects; do not create photorealistic faces.",
+  "futureAssetNote": "Future artwork slot: stylized watercolor literary-manga / visual-novel scene, privacy-safe, consistent character presence, no photorealistic identity replication."
 }

@@ -9,7 +9,11 @@
   "theme": "Madikeri becomes beautiful because she is there.",
   "estimatedReadingMinutes": 4,
   "legacyHashRoute": "#read/chapter-9",
-  "sceneKind": "road",
-  "sceneDescription": "Chapter 9 is presented as a privacy-safe stylized memoir scene using distant road, moving clouds, travel light. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
-  "privacyNotes": "Use privacy-safe, stylized, non-photorealistic character presence. Do not create final faces unless explicitly approved."
+  "sceneKind": "mountain",
+  "sceneDescription": "Madikeri is a cool mountain memory of mist, road, and the feeling that forever might be possible.",
+  "privacyNotes": "Use privacy-safe, stylized, non-photorealistic character presence. Do not create final faces unless explicitly approved.",
+  "visualAnchor": "misty hills and winding road",
+  "livingMotion": "fog drift",
+  "privacySafeTreatment": "Use symbolic environments, silhouettes, partial presence, hands, shadows, reflections, and objects; do not create photorealistic faces.",
+  "futureAssetNote": "Future artwork slot: stylized watercolor literary-manga / visual-novel scene, privacy-safe, consistent character presence, no photorealistic identity replication."
 }

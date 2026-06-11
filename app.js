@@ -116,6 +116,13 @@ function renderHome() {
   const bookmark = localStorage.getItem("memoir-bookmark");
   view.innerHTML = `
     <section class="hero cover-experience reveal">
+      <div class="home-memory-stage" aria-hidden="true">
+        <span class="home-sun"></span>
+        <span class="home-road"></span>
+        <span class="home-letter"></span>
+        <span class="home-glass"></span>
+        <span class="home-leaf"></span>
+      </div>
       <div class="cover-light"></div>
       <div class="hero-inner cover-inner">
         <p class="kicker">A premium digital memoir</p>
@@ -126,7 +133,7 @@ function renderHome() {
         <p class="note">Some names, places, timelines, and identifying details have been changed. This memoir is inspired by real emotions, memories, and experiences. Its purpose is not to decide who was right or wrong, but to hold love, effort, growth, hope, heartbreak, memory, and release with honesty.</p>
         <p class="dedication">For the memories, the conversations, the road trips, the letters, the love, the lessons, the growth, and the goodbye.</p>
         <div class="hero-actions">
-          <a class="btn" href="${hrefForChapter(firstChapter())}">Begin Reading</a>
+          <a class="btn" href="${hrefForChapter(firstChapter())}">Read Chapter 1</a>
           ${bookmark ? `<a class="btn secondary" href="${hrefForChapter(chapterBySlug(bookmark))}">Continue Reading</a><a class="btn secondary" href="${hrefForChapter(chapterBySlug(bookmark))}">Return to Last Chapter</a>` : ""}
           <a class="btn secondary" href="#toc">Table of Contents</a>
         </div>

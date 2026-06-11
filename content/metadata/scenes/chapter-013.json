@@ -3,6 +3,12 @@
   "chapterId": "chapter-013",
   "canonicalUrl": "https://harshabooks.com/chapters/the-first-time-she-called-me-baby/",
   "livingSceneLayer": "horizon",
-  "aiReadableDescription": "Chapter 13 is presented as a privacy-safe stylized memoir scene using open horizon, sunset light, quiet distance. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
-  "reducedMotionEquivalent": "Static watercolor-inspired composition with no continuous motion."
+  "aiReadableDescription": "One small word becomes proof of closeness, shown as a warm intimate glow around a remembered message.",
+  "reducedMotionEquivalent": "Static watercolor-inspired composition with no continuous motion.",
+  "sceneKind": "glow",
+  "sceneDescription": "One small word becomes proof of closeness, shown as a warm intimate glow around a remembered message.",
+  "visualAnchor": "soft word-glow and close light",
+  "livingMotion": "small pulse of warmth",
+  "privacySafeTreatment": "Use symbolic environments, silhouettes, partial presence, hands, shadows, reflections, and objects; do not create photorealistic faces.",
+  "futureAssetNote": "Future artwork slot: stylized watercolor literary-manga / visual-novel scene, privacy-safe, consistent character presence, no photorealistic identity replication."
 }

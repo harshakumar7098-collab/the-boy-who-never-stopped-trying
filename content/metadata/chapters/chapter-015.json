@@ -9,7 +9,11 @@
   "theme": "A gift turns effort into something visible.",
   "estimatedReadingMinutes": 4,
   "legacyHashRoute": "#read/chapter-15",
-  "sceneKind": "paper",
-  "sceneDescription": "Chapter 15 is presented as a privacy-safe stylized memoir scene using paper pages, letter texture, soft handwritten-memory movement. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
-  "privacyNotes": "Use privacy-safe, stylized, non-photorealistic character presence. Do not create final faces unless explicitly approved."
+  "sceneKind": "gift",
+  "sceneDescription": "The handmade birthday gift is effort made visible: paper, ribbon, and care held in the hands.",
+  "privacyNotes": "Use privacy-safe, stylized, non-photorealistic character presence. Do not create final faces unless explicitly approved.",
+  "visualAnchor": "handmade gift and folded paper",
+  "livingMotion": "subtle ribbon/page lift",
+  "privacySafeTreatment": "Use symbolic environments, silhouettes, partial presence, hands, shadows, reflections, and objects; do not create photorealistic faces.",
+  "futureAssetNote": "Future artwork slot: stylized watercolor literary-manga / visual-novel scene, privacy-safe, consistent character presence, no photorealistic identity replication."
 }

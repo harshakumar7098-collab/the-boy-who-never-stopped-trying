@@ -9,7 +9,11 @@
   "theme": "Love means staying to him, freedom to her.",
   "estimatedReadingMinutes": 4,
   "legacyHashRoute": "#read/chapter-22",
-  "sceneKind": "rain",
-  "sceneDescription": "Chapter 22 is presented as a privacy-safe stylized memoir scene using rain-softened window light, empty road, fading leaves. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
-  "privacyNotes": "Use privacy-safe, stylized, non-photorealistic character presence. Do not create final faces unless explicitly approved."
+  "sceneKind": "split",
+  "sceneDescription": "Different definitions of love become a split composition: staying, freedom, and two honest directions.",
+  "privacyNotes": "Use privacy-safe, stylized, non-photorealistic character presence. Do not create final faces unless explicitly approved.",
+  "visualAnchor": "split path and divided light",
+  "livingMotion": "slow opposing light drift",
+  "privacySafeTreatment": "Use symbolic environments, silhouettes, partial presence, hands, shadows, reflections, and objects; do not create photorealistic faces.",
+  "futureAssetNote": "Future artwork slot: stylized watercolor literary-manga / visual-novel scene, privacy-safe, consistent character presence, no photorealistic identity replication."
 }

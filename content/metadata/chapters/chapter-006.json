@@ -10,6 +10,10 @@
   "estimatedReadingMinutes": 4,
   "legacyHashRoute": "#read/chapter-6",
   "sceneKind": "paper",
-  "sceneDescription": "Chapter 6 is presented as a privacy-safe stylized memoir scene using paper pages, letter texture, soft handwritten-memory movement. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
-  "privacyNotes": "Use privacy-safe, stylized, non-photorealistic character presence. Do not create final faces unless explicitly approved."
+  "sceneDescription": "The diary becomes an intimate paper memory, where private feelings are exposed before he is ready.",
+  "privacyNotes": "Use privacy-safe, stylized, non-photorealistic character presence. Do not create final faces unless explicitly approved.",
+  "visualAnchor": "diary page and ink texture",
+  "livingMotion": "page-light reveal",
+  "privacySafeTreatment": "Use symbolic environments, silhouettes, partial presence, hands, shadows, reflections, and objects; do not create photorealistic faces.",
+  "futureAssetNote": "Future artwork slot: stylized watercolor literary-manga / visual-novel scene, privacy-safe, consistent character presence, no photorealistic identity replication."
 }

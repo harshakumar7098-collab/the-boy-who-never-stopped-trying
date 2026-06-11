@@ -9,7 +9,11 @@
   "theme": "He learns love must sit beside old pain.",
   "estimatedReadingMinutes": 4,
   "legacyHashRoute": "#read/chapter-24",
-  "sceneKind": "rain",
-  "sceneDescription": "Chapter 24 is presented as a privacy-safe stylized memoir scene using rain-softened window light, empty road, fading leaves. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
-  "privacyNotes": "Use privacy-safe, stylized, non-photorealistic character presence. Do not create final faces unless explicitly approved."
+  "sceneKind": "ghost",
+  "sceneDescription": "The ghost of her past becomes a cool memory layer, where old pain sits beside present love.",
+  "privacyNotes": "Use privacy-safe, stylized, non-photorealistic character presence. Do not create final faces unless explicitly approved.",
+  "visualAnchor": "fogged reflection and distant shadow",
+  "livingMotion": "slow mist crossing",
+  "privacySafeTreatment": "Use symbolic environments, silhouettes, partial presence, hands, shadows, reflections, and objects; do not create photorealistic faces.",
+  "futureAssetNote": "Future artwork slot: stylized watercolor literary-manga / visual-novel scene, privacy-safe, consistent character presence, no photorealistic identity replication."
 }

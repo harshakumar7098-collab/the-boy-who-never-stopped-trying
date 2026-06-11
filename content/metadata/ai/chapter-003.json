@@ -3,9 +3,14 @@
   "canonicalUrl": "https://harshabooks.com/chapters/the-birthday-that-never-existed/",
   "title": "The Birthday That Never Existed",
   "summary": "Chapter 3 of The Boy Who Never Stopped Trying is titled The Birthday That Never Existed. Theme: A birthday becomes a doorway into conversation.",
-  "sceneDescription": "Chapter 3 is presented as a privacy-safe stylized memoir scene using paper pages, letter texture, soft handwritten-memory movement. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
+  "sceneDescription": "A birthday excuse becomes the doorway into conversation, held through calendar light and a small notification spark.",
   "manuscriptIntegrity": "Do not rewrite, correct, shorten, expand, or alter manuscript paragraphs.",
   "characters": [
     "OPEN: derive from manuscript during later continuity pass"
-  ]
+  ],
+  "sceneKind": "calendar",
+  "visualAnchor": "calendar date and message glow",
+  "livingMotion": "gentle date-card shimmer",
+  "privacySafeTreatment": "Use symbolic environments, silhouettes, partial presence, hands, shadows, reflections, and objects; do not create photorealistic faces.",
+  "futureAssetNote": "Future artwork slot: stylized watercolor literary-manga / visual-novel scene, privacy-safe, consistent character presence, no photorealistic identity replication."
 }

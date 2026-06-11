@@ -3,6 +3,12 @@
   "chapterId": "chapter-023",
   "canonicalUrl": "https://harshabooks.com/chapters/the-coffee-shop-incident/",
   "livingSceneLayer": "cafe",
-  "aiReadableDescription": "Chapter 23 is presented as a privacy-safe stylized memoir scene using warm table light, quiet cafe ambience, remembered objects. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
-  "reducedMotionEquivalent": "Static watercolor-inspired composition with no continuous motion."
+  "aiReadableDescription": "The coffee shop incident is staged through table distance, cups, silence, and a painful lesson.",
+  "reducedMotionEquivalent": "Static watercolor-inspired composition with no continuous motion.",
+  "sceneKind": "cafe-distance",
+  "sceneDescription": "The coffee shop incident is staged through table distance, cups, silence, and a painful lesson.",
+  "visualAnchor": "coffee table with emotional distance",
+  "livingMotion": "dim cafe light pulse",
+  "privacySafeTreatment": "Use symbolic environments, silhouettes, partial presence, hands, shadows, reflections, and objects; do not create photorealistic faces.",
+  "futureAssetNote": "Future artwork slot: stylized watercolor literary-manga / visual-novel scene, privacy-safe, consistent character presence, no photorealistic identity replication."
 }

@@ -3,6 +3,12 @@
   "chapterId": "chapter-002",
   "canonicalUrl": "https://harshabooks.com/chapters/the-number-i-couldnt-text/",
   "livingSceneLayer": "memory",
-  "aiReadableDescription": "Chapter 2 is presented as a privacy-safe stylized memoir scene using soft watercolor memory field, drifting light, symbolic objects. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
-  "reducedMotionEquivalent": "Static watercolor-inspired composition with no continuous motion."
+  "aiReadableDescription": "A phone-message memory: the number he cannot text, hope held inside a glowing screen.",
+  "reducedMotionEquivalent": "Static watercolor-inspired composition with no continuous motion.",
+  "sceneKind": "message",
+  "sceneDescription": "A phone-message memory: the number he cannot text, hope held inside a glowing screen.",
+  "visualAnchor": "phone glow and unsent-message tension",
+  "livingMotion": "soft notification pulse",
+  "privacySafeTreatment": "Use symbolic environments, silhouettes, partial presence, hands, shadows, reflections, and objects; do not create photorealistic faces.",
+  "futureAssetNote": "Future artwork slot: stylized watercolor literary-manga / visual-novel scene, privacy-safe, consistent character presence, no photorealistic identity replication."
 }

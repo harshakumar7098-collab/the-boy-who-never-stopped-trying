@@ -3,9 +3,14 @@
   "canonicalUrl": "https://harshabooks.com/chapters/pebble/",
   "title": "Pebble",
   "summary": "Chapter 4 of The Boy Who Never Stopped Trying is titled Pebble. Theme: Pebble becomes one of the memories that survives.",
-  "sceneDescription": "Chapter 4 is presented as a privacy-safe stylized memoir scene using warm table light, quiet cafe ambience, remembered objects. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
+  "sceneDescription": "Pebble is held as a warm public memory: table light, cups, comfort, and nostalgic stillness.",
   "manuscriptIntegrity": "Do not rewrite, correct, shorten, expand, or alter manuscript paragraphs.",
   "characters": [
     "OPEN: derive from manuscript during later continuity pass"
-  ]
+  ],
+  "sceneKind": "cafe",
+  "visualAnchor": "warm cafe table and remembered cups",
+  "livingMotion": "slow ambient table glow",
+  "privacySafeTreatment": "Use symbolic environments, silhouettes, partial presence, hands, shadows, reflections, and objects; do not create photorealistic faces.",
+  "futureAssetNote": "Future artwork slot: stylized watercolor literary-manga / visual-novel scene, privacy-safe, consistent character presence, no photorealistic identity replication."
 }

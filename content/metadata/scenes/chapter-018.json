@@ -3,6 +3,12 @@
   "chapterId": "chapter-018",
   "canonicalUrl": "https://harshabooks.com/chapters/the-things-i-stopped-being/",
   "livingSceneLayer": "horizon",
-  "aiReadableDescription": "Chapter 18 is presented as a privacy-safe stylized memoir scene using open horizon, sunset light, quiet distance. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
-  "reducedMotionEquivalent": "Static watercolor-inspired composition with no continuous motion."
+  "aiReadableDescription": "The things he stopped being become a release scene, where old shapes fall away in muted light.",
+  "reducedMotionEquivalent": "Static watercolor-inspired composition with no continuous motion.",
+  "sceneKind": "release",
+  "sceneDescription": "The things he stopped being become a release scene, where old shapes fall away in muted light.",
+  "visualAnchor": "falling old-self fragments",
+  "livingMotion": "slow fragment fall",
+  "privacySafeTreatment": "Use symbolic environments, silhouettes, partial presence, hands, shadows, reflections, and objects; do not create photorealistic faces.",
+  "futureAssetNote": "Future artwork slot: stylized watercolor literary-manga / visual-novel scene, privacy-safe, consistent character presence, no photorealistic identity replication."
 }

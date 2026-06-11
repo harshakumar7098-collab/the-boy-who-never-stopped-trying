@@ -3,9 +3,14 @@
   "canonicalUrl": "https://harshabooks.com/chapters/the-days-between-friendship-and-love/",
   "title": "The Days Between Friendship and Love",
   "summary": "Chapter 8 of The Boy Who Never Stopped Trying is titled The Days Between Friendship and Love. Theme: The unnamed space between friendship and love.",
-  "sceneDescription": "Chapter 8 is presented as a privacy-safe stylized memoir scene using rain-softened window light, empty road, fading leaves. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
+  "sceneDescription": "The space between friendship and love is staged as a threshold: close, uncertain, and unnamed.",
   "manuscriptIntegrity": "Do not rewrite, correct, shorten, expand, or alter manuscript paragraphs.",
   "characters": [
     "OPEN: derive from manuscript during later continuity pass"
-  ]
+  ],
+  "sceneKind": "threshold",
+  "visualAnchor": "doorway light and two soft silhouettes",
+  "livingMotion": "light breathing at the threshold",
+  "privacySafeTreatment": "Use symbolic environments, silhouettes, partial presence, hands, shadows, reflections, and objects; do not create photorealistic faces.",
+  "futureAssetNote": "Future artwork slot: stylized watercolor literary-manga / visual-novel scene, privacy-safe, consistent character presence, no photorealistic identity replication."
 }

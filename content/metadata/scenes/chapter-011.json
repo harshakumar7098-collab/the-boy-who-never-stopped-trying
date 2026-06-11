@@ -3,6 +3,12 @@
   "chapterId": "chapter-011",
   "canonicalUrl": "https://harshabooks.com/chapters/the-life-we-started-building/",
   "livingSceneLayer": "memory",
-  "aiReadableDescription": "Chapter 11 is presented as a privacy-safe stylized memoir scene using soft watercolor memory field, drifting light, symbolic objects. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
-  "reducedMotionEquivalent": "Static watercolor-inspired composition with no continuous motion."
+  "aiReadableDescription": "The life they started building appears as domestic future fragments, plans, and soft imagined rooms.",
+  "reducedMotionEquivalent": "Static watercolor-inspired composition with no continuous motion.",
+  "sceneKind": "future",
+  "sceneDescription": "The life they started building appears as domestic future fragments, plans, and soft imagined rooms.",
+  "visualAnchor": "future-room fragments and blueprint lines",
+  "livingMotion": "gentle blueprint reveal",
+  "privacySafeTreatment": "Use symbolic environments, silhouettes, partial presence, hands, shadows, reflections, and objects; do not create photorealistic faces.",
+  "futureAssetNote": "Future artwork slot: stylized watercolor literary-manga / visual-novel scene, privacy-safe, consistent character presence, no photorealistic identity replication."
 }

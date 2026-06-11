@@ -3,10 +3,15 @@
   "canonicalUrl": "https://harshabooks.com/chapters/the-morning-that-stayed/",
   "title": "The Morning That Stayed",
   "summary": "Chapter 1 of The Boy Who Never Stopped Trying is titled The Morning That Stayed. Theme: The ordinary morning that quietly changed a life.",
-  "sceneDescription": "A stylized watercolor residential morning: a glass of water catches warm sunlight near an ordinary broom, with subtle memory particles and a privacy-safe non-final suggestion of Maya without a photorealistic face.",
+  "sceneDescription": "The first remembered morning: golden room light, a glass of water, and privacy-safe partial presence.",
   "manuscriptIntegrity": "Do not rewrite, correct, shorten, expand, or alter manuscript paragraphs.",
   "characters": [
     "Arjun",
     "Maya / Manne"
-  ]
+  ],
+  "sceneKind": "morning",
+  "visualAnchor": "glass of water in warm residential morning light",
+  "livingMotion": "slow sunlight drift and faint memory particles",
+  "privacySafeTreatment": "Use symbolic environments, silhouettes, partial presence, hands, shadows, reflections, and objects; do not create photorealistic faces.",
+  "futureAssetNote": "Future artwork slot: stylized watercolor literary-manga / visual-novel scene, privacy-safe, consistent character presence, no photorealistic identity replication."
 }

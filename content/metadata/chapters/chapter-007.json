@@ -9,7 +9,11 @@
   "theme": "A letter, a street, tears, and fragile hope.",
   "estimatedReadingMinutes": 4,
   "legacyHashRoute": "#read/chapter-7",
-  "sceneKind": "paper",
-  "sceneDescription": "Chapter 7 is presented as a privacy-safe stylized memoir scene using paper pages, letter texture, soft handwritten-memory movement. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
-  "privacyNotes": "Use privacy-safe, stylized, non-photorealistic character presence. Do not create final faces unless explicitly approved."
+  "sceneKind": "letter",
+  "sceneDescription": "A letter and a street become a fragile emotional scene of tears, hope, and paper held in public.",
+  "privacyNotes": "Use privacy-safe, stylized, non-photorealistic character presence. Do not create final faces unless explicitly approved.",
+  "visualAnchor": "letter page against street light",
+  "livingMotion": "ink shimmer and page lift",
+  "privacySafeTreatment": "Use symbolic environments, silhouettes, partial presence, hands, shadows, reflections, and objects; do not create photorealistic faces.",
+  "futureAssetNote": "Future artwork slot: stylized watercolor literary-manga / visual-novel scene, privacy-safe, consistent character presence, no photorealistic identity replication."
 }

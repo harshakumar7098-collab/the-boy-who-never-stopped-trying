@@ -3,6 +3,12 @@
   "chapterId": "chapter-004",
   "canonicalUrl": "https://harshabooks.com/chapters/pebble/",
   "livingSceneLayer": "cafe",
-  "aiReadableDescription": "Chapter 4 is presented as a privacy-safe stylized memoir scene using warm table light, quiet cafe ambience, remembered objects. The Living Scene Layer supports the memory without changing the manuscript text or recreating real people photorealistically.",
-  "reducedMotionEquivalent": "Static watercolor-inspired composition with no continuous motion."
+  "aiReadableDescription": "Pebble is held as a warm public memory: table light, cups, comfort, and nostalgic stillness.",
+  "reducedMotionEquivalent": "Static watercolor-inspired composition with no continuous motion.",
+  "sceneKind": "cafe",
+  "sceneDescription": "Pebble is held as a warm public memory: table light, cups, comfort, and nostalgic stillness.",
+  "visualAnchor": "warm cafe table and remembered cups",
+  "livingMotion": "slow ambient table glow",
+  "privacySafeTreatment": "Use symbolic environments, silhouettes, partial presence, hands, shadows, reflections, and objects; do not create photorealistic faces.",
+  "futureAssetNote": "Future artwork slot: stylized watercolor literary-manga / visual-novel scene, privacy-safe, consistent character presence, no photorealistic identity replication."
 }
