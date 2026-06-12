@@ -988,6 +988,23 @@ body.immersive .reader-shell { width: min(820px, calc(100% - 1rem)); }
   color: rgba(255, 248, 235, .84);
   text-shadow: 0 2px 18px rgba(0,0,0,.38);
 }
+.after-attribution {
+  display: grid;
+  gap: .18rem;
+  width: fit-content;
+  margin: 1.35rem 0 0;
+  padding-left: 1rem;
+  border-left: 1px solid rgba(232, 190, 114, .58);
+  color: rgba(255, 248, 235, .78);
+  font-family: var(--serif);
+  font-size: clamp(1rem, 1.4vw, 1.18rem);
+  font-style: italic;
+  line-height: 1.45;
+  text-shadow: 0 2px 16px rgba(0,0,0,.36);
+}
+.after-attribution span {
+  display: block;
+}
 .after-prose {
   width: min(760px, calc(100% - 2.2rem));
   margin: 0 auto;
