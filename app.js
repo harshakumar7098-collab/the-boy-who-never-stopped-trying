@@ -233,7 +233,7 @@ function renderReader(slug) {
       </div>
       <nav class="chapter-nav" aria-label="Chapter navigation">
         ${prev ? `<a href="#read/${slugFor(prev)}">Previous<br>${escapeHtml(prev.title)}</a>` : `<a href="#toc">Previous<br>Table of Contents</a>`}
-        ${next ? `<a class="next-chapter" href="#read/${slugFor(next)}">Next<br>${escapeHtml(next.title)}</a>` : `<a class="next-chapter" href="#final">Final Page<br>The answer is yes</a>`}
+        ${next ? `<a class="next-chapter" href="#read/${slugFor(next)}">Next<br>${escapeHtml(next.title)}</a>` : `<a class="next-chapter" href="/after-the-last-page/">After the Last Page<br>A final reflection</a>`}
       </nav>
     </article>`;
 
@@ -375,8 +375,7 @@ function route() {
   if (hash === "toc") location.href = "chapters/";
   else if (hash === "timeline") renderTimeline();
   else if (hash === "search") renderSearch();
-  else if (hash === "memory") renderMemory();
-  else if (hash === "author") renderAuthor();
+  else if (hash === "after-the-last-page" || hash === "memory" || hash === "author") location.href = "/after-the-last-page/";
   else if (hash === "final") renderFinal();
   else renderHome();
   window.scrollTo({ top: 0, behavior: "smooth" });

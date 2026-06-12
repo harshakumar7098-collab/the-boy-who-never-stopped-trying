@@ -917,6 +917,117 @@ body.immersive .reader-shell { width: min(820px, calc(100% - 1rem)); }
 }
 .memory-cinema .page { position: relative; }
 
+.after-last-page {
+  background:
+    radial-gradient(circle at 10% 8%, rgba(220, 173, 95, .14), transparent 22rem),
+    linear-gradient(180deg, var(--paper-soft), var(--paper));
+}
+.after-hero {
+  position: relative;
+  min-height: calc(100vh - 58px);
+  display: grid;
+  align-items: end;
+  padding: clamp(4rem, 9vw, 7rem) clamp(1.2rem, 6vw, 5rem);
+  overflow: hidden;
+  isolation: isolate;
+  color: #fff8eb;
+  background:
+    linear-gradient(90deg, rgba(18, 16, 13, .74), rgba(18, 16, 13, .22) 54%, rgba(18, 16, 13, .08)),
+    linear-gradient(0deg, rgba(19, 15, 12, .74), transparent 58%),
+    url("assets/artwork/home.jpeg") center/cover no-repeat;
+}
+.after-last-page-page .after-hero {
+  background:
+    linear-gradient(90deg, rgba(18, 16, 13, .74), rgba(18, 16, 13, .22) 54%, rgba(18, 16, 13, .08)),
+    linear-gradient(0deg, rgba(19, 15, 12, .74), transparent 58%),
+    url("assets/artwork/home.jpeg") center/cover no-repeat;
+}
+.after-sky {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 78% 18%, rgba(255, 227, 164, .26), transparent 15rem),
+    radial-gradient(circle at 20% 26%, rgba(183, 216, 225, .18), transparent 18rem);
+}
+.after-road {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 38%;
+  z-index: -1;
+  background:
+    linear-gradient(105deg, transparent 0 48%, rgba(255, 238, 191, .32) 49%, transparent 50%),
+    linear-gradient(75deg, transparent 0 48%, rgba(255, 238, 191, .22) 49%, transparent 50%);
+  clip-path: polygon(43% 0, 57% 0, 100% 100%, 0 100%);
+  opacity: .72;
+}
+.after-fragments span {
+  position: absolute;
+  width: .42rem;
+  height: 1rem;
+  border-radius: 80% 0 80% 0;
+  background: rgba(240, 205, 139, .48);
+  animation: leafDrift 18s linear infinite;
+}
+.after-fragments span:nth-child(1) { left: 18%; top: 18%; animation-delay: -2s; }
+.after-fragments span:nth-child(2) { left: 72%; top: 26%; animation-delay: -8s; }
+.after-fragments span:nth-child(3) { left: 84%; top: 58%; animation-delay: -13s; }
+.after-fragments span:nth-child(4) { left: 42%; top: 38%; animation-delay: -5s; }
+.after-hero-copy {
+  width: min(820px, 100%);
+  position: relative;
+  z-index: 2;
+}
+.after-hero h1 {
+  max-width: 12ch;
+  font-size: clamp(4rem, 11vw, 8.5rem);
+}
+.after-hero .subtitle {
+  color: rgba(255, 248, 235, .84);
+  text-shadow: 0 2px 18px rgba(0,0,0,.38);
+}
+.after-prose {
+  width: min(760px, calc(100% - 2.2rem));
+  margin: 0 auto;
+  padding: clamp(3rem, 8vw, 7rem) 0;
+}
+.after-prose section {
+  margin: 0 0 clamp(4rem, 8vw, 7rem);
+  padding-top: clamp(1rem, 3vw, 2rem);
+  border-top: 1px solid color-mix(in srgb, var(--gold) 28%, transparent);
+}
+.after-prose section:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+.after-prose h2 {
+  max-width: 11ch;
+  margin: 0 0 1.5rem;
+  font-size: clamp(2.9rem, 7vw, 5.7rem);
+}
+.after-prose p {
+  max-width: 42rem;
+  margin: 0 0 .82rem;
+  color: color-mix(in srgb, var(--ink) 89%, var(--muted));
+  font-size: clamp(1.18rem, 2vw, 1.38rem);
+  line-height: 1.72;
+}
+.after-prose p:nth-child(3n + 2) {
+  max-width: 36rem;
+}
+.after-prose section:last-child {
+  margin-bottom: 0;
+  padding-bottom: clamp(2rem, 6vw, 5rem);
+}
+.after-prose section:last-child p:last-child {
+  color: var(--gold);
+  font-family: var(--serif-display);
+  font-size: clamp(2.3rem, 6vw, 4.2rem);
+  line-height: 1;
+}
+
 .ending {
   position: relative;
   overflow: hidden;
@@ -2041,6 +2152,25 @@ body.immersive .chapter-body {
   .chapter-tools { position: sticky; top: 0; z-index: 5; padding: .6rem 0; background: var(--paper); }
   .chapter-body { padding: 1.2rem; }
   .chapter-body p { font-size: 1.12rem; line-height: 1.72; }
+  .after-hero {
+    min-height: 78svh;
+    padding: 5.5rem 1.35rem 3rem;
+    background-position: center top;
+  }
+  .after-hero h1 {
+    font-size: clamp(3.1rem, 16vw, 5.2rem);
+  }
+  .after-prose {
+    width: min(36rem, calc(100% - 2.4rem));
+  }
+  .after-prose h2 {
+    max-width: 10ch;
+    font-size: clamp(2.45rem, 13vw, 4rem);
+  }
+  .after-prose p {
+    font-size: 1.1rem;
+    line-height: 1.68;
+  }
   .canonical-topbar { align-items: flex-start; flex-direction: column; gap: .35rem; padding: .7rem 1rem; }
   .canonical-topbar nav { justify-content: flex-start; gap: .8rem; }
   .canonical-topbar a { font-size: .82rem; }
