@@ -77,6 +77,30 @@ function artworkFor(section) {
   return `assets/artwork/chapter-${String(section.number).padStart(2, "0")}.jpeg`;
 }
 
+const contentsArcs = [
+  { title: "Beginnings", range: "Chapters 01-07", from: 1, to: 7 },
+  { title: "Becoming Us", range: "Chapters 08-14", from: 8, to: 14 },
+  { title: "Building a Life", range: "Chapters 15-21", from: 15, to: 21 },
+  { title: "The Distance", range: "Chapters 22-29", from: 22, to: 29 },
+  { title: "The Goodbye", range: "Chapters 30-34", from: 30, to: 34 },
+  { title: "What Remains", range: "Chapter 35 and Epilogue", from: 35, to: Infinity },
+];
+
+function contentsArcFor(section) {
+  const position = section.kind === "epilogue" ? Infinity : section.number;
+  return contentsArcs.find((arc) => position >= arc.from && position <= arc.to) || contentsArcs[0];
+}
+
+function chapterCard(chapter, done) {
+  return `
+    <a class="chapter-card contents-chapter-card atmosphere-${atmosphereFor(chapter)}" href="${hrefForChapter(chapter)}" data-done="${done.has(slugFor(chapter)) ? "Complete" : ""}">
+      <span class="chapter-artwork-strip" style="--chapter-thumb:url('/${artworkFor(chapter)}')" aria-hidden="true"></span>
+      <span class="chapter-card-meta">${chapter.kind === "epilogue" ? "Epilogue" : `Chapter ${chapter.number}`} / ${readingMinutes(chapter)} min</span>
+      <h3>${escapeHtml(chapter.title)}</h3>
+      <p>${escapeHtml(chapter.theme)}</p>
+    </a>`;
+}
+
 function readingMinutes(section) {
   const words = section.paragraphs.join(" ").split(/\s+/).filter(Boolean).length;
   return Math.max(1, Math.round(words / 210));
@@ -176,22 +200,28 @@ function renderToc() {
   const done = completionSet();
   view.innerHTML = `
     <section class="page reveal">
-      <div class="section-head">
+      <div class="section-head contents-head">
         <div>
           <p class="kicker">Book contents</p>
           <h2>Thirty-five chapters and an epilogue.</h2>
-          <p>Each chapter keeps the manuscript intact while giving the memory its own visual atmosphere.</p>
+          <p>A story about love, effort, growth, heartbreak, gratitude, and what remains.</p>
         </div>
         <a class="btn secondary" href="${hrefForChapter(firstChapter())}">Start</a>
       </div>
-      <div class="toc-grid">
-        ${chapters.map((chapter) => `
-          <a class="chapter-card atmosphere-${atmosphereFor(chapter)}" href="${hrefForChapter(chapter)}" data-done="${done.has(slugFor(chapter)) ? "Complete" : ""}">
-            <span>${chapter.kind === "epilogue" ? "Epilogue" : `Chapter ${chapter.number}`} / ${readingMinutes(chapter)} min</span>
-            <h3>${escapeHtml(chapter.title)}</h3>
-            <p>${escapeHtml(chapter.theme)}</p>
-          </a>
-        `).join("")}
+      <div class="contents-journey" aria-label="Memoir chapters organized by emotional arc">
+        ${contentsArcs.map((arc) => {
+          const arcChapters = chapters.filter((chapter) => contentsArcFor(chapter) === arc);
+          return `
+            <section class="contents-arc">
+              <div class="contents-arc-head">
+                <p>${arc.range}</p>
+                <h3>${arc.title}</h3>
+              </div>
+              <div class="toc-grid contents-grid">
+                ${arcChapters.map((chapter) => chapterCard(chapter, done)).join("")}
+              </div>
+            </section>`;
+        }).join("")}
       </div>
     </section>`;
 }
