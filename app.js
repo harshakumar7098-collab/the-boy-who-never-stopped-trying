@@ -101,6 +101,14 @@ function chapterCard(chapter, done) {
     </a>`;
 }
 
+function memoryAlbumCard(chapter, index) {
+  return `
+    <a class="memory-album-card" href="${hrefForChapter(chapter)}">
+      <img src="/${artworkFor(chapter)}" alt="" loading="${index < 3 ? "eager" : "lazy"}" decoding="async" fetchpriority="${index === 0 ? "high" : "auto"}" width="1200" height="1600">
+      <span>${escapeHtml(chapter.title)}</span>
+    </a>`;
+}
+
 function readingMinutes(section) {
   const words = section.paragraphs.join(" ").split(/\s+/).filter(Boolean).length;
   return Math.max(1, Math.round(words / 210));
@@ -277,26 +285,18 @@ function renderReader(slug) {
   });
 }
 
-function renderTimeline() {
-  const picks = [1, 2, 4, 5, 7, 9, 11, 16, 20, 23, 25, 28, 32, 33, 34, 35];
+function renderMemories() {
+  const memoryChapters = chapters;
   view.innerHTML = `
-    <section class="page timeline-page reveal">
+    <section class="page memories-page reveal">
       <div class="section-head">
         <div>
-          <p class="kicker">Emotional timeline</p>
-          <h2>The path through memory.</h2>
-          <p>A visual thread through first sight, closeness, roads, change, distance, heartbreak, and gratitude.</p>
+          <h2>Memories</h2>
+          <p>A visual journey through the moments that remained.</p>
         </div>
       </div>
-      <div class="timeline">
-        ${picks.map((n, i) => {
-          const c = chapters.find((chapter) => chapter.number === n);
-          return `<a class="timeline-item atmosphere-${atmosphereFor(c)}" href="${hrefForChapter(c)}">
-            <p class="meta">Milestone ${String(i + 1).padStart(2, "0")} / Chapter ${c.number}</p>
-            <h3>${escapeHtml(c.title)}</h3>
-            <p>${escapeHtml(c.theme)}</p>
-          </a>`;
-        }).join("")}
+      <div class="memories-archive" aria-label="Chapter memories">
+        ${memoryChapters.map(memoryAlbumCard).join("")}
       </div>
     </section>`;
 }
@@ -403,7 +403,7 @@ function route() {
     return;
   }
   if (hash === "toc") location.href = "chapters/";
-  else if (hash === "timeline") renderTimeline();
+  else if (hash === "memories" || hash === "timeline") renderMemories();
   else if (hash === "search") renderSearch();
   else if (hash === "after-the-last-page" || hash === "memory" || hash === "author") location.href = "/after-the-last-page/";
   else if (hash === "final") renderFinal();
