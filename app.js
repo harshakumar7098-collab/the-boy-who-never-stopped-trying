@@ -10,11 +10,10 @@ const note = window.MEMOIR.authorNote;
 const coverSubtitle = "A Memoir About Love, Hope, Growth, and Learning to Let Go";
 const authorLibrary = {
   authorName: "Harsha Kumar Anand",
-  tagline: "Stories that stayed with me long after the people left.",
+  tagline: "Books & Stories",
   books: [
     {
       id: "the-boy-who-never-stopped-trying",
-      label: "Book 1",
       title: "The Boy Who Never Stopped Trying",
       author: "H.K Anand",
       subtitle: "A memoir about love, hope, and learning to let go.",
@@ -214,33 +213,27 @@ function characterStage(classes) {
 
 function bookCard(book) {
   return `
-    <article class="book-card premium-book-card" style="--book-artwork:url('${book.artwork}')">
-      <a class="book-card-art" href="${book.landingHref}" aria-label="Open ${escapeHtml(book.title)}">
-        <img src="${book.artwork}" alt="" loading="eager" decoding="async" width="1200" height="1600">
+    <article class="book-card bookshelf-book-card" style="--book-artwork:url('${book.artwork}')">
+      <a class="book-card-link" href="${book.landingHref}" aria-label="Open ${escapeHtml(book.title)}">
+        <span class="book-card-art">
+          <img src="${book.artwork}" alt="" loading="eager" decoding="async" width="1200" height="1600">
+        </span>
+        <span class="book-card-copy">
+          <span class="book-card-title">${escapeHtml(book.title)}</span>
+          <span class="book-card-description">${escapeHtml(book.subtitle)}</span>
+        </span>
       </a>
-      <div class="book-card-copy">
-        <p class="kicker">${escapeHtml(book.label)}</p>
-        <h2>${escapeHtml(book.title)}</h2>
-        <p class="subtitle">${escapeHtml(book.subtitle)}</p>
-        <div class="book-card-actions">
-          <a class="btn" href="${book.landingHref}">Open Book</a>
-          <a class="btn secondary" href="${book.readHref}">Start Reading</a>
-          <a class="btn secondary" href="${book.contentsHref}">Table of Contents</a>
-        </div>
-      </div>
     </article>`;
 }
 
 function renderLibraryHome() {
   setDocumentMeta({
     title: "Harsha Kumar Anand | Books",
-    description: "The official author library of Harsha Kumar Anand, featuring cinematic digital books and memoirs including The Boy Who Never Stopped Trying.",
+    description: "Books and stories by Harsha Kumar Anand, including The Boy Who Never Stopped Trying.",
   });
   view.innerHTML = `
-    <section class="author-library-hero reveal">
-      <div class="library-hero-art" aria-hidden="true"></div>
+    <section class="author-library-hero bookshelf-home reveal">
       <div class="library-hero-inner">
-        <p class="kicker">Author Library</p>
         <h1>${escapeHtml(authorLibrary.authorName)}</h1>
         <p class="subtitle">${escapeHtml(authorLibrary.tagline)}</p>
       </div>
@@ -276,20 +269,22 @@ function renderBookLanding(book = currentBook()) {
         ${characterStage("character-stage couple-character-scene couple-profile memory-reflection home-couple")}
       </div>
       <div class="cover-light"></div>
-      <div class="hero-inner cover-inner">
-        <p class="kicker">${escapeHtml(book.label)}</p>
-        <h1>${escapeHtml(book.title)}</h1>
-        <p class="subtitle">${escapeHtml(book.subtitle)}</p>
-        <p class="byline">${escapeHtml(book.author)}</p>
-        <p class="note">${escapeHtml(book.description)}</p>
-        <p class="byline">Narrated through the character Arjun</p>
-        <p class="note">Some names, places, timelines, and identifying details have been changed. This memoir is inspired by real emotions, memories, and experiences. Its purpose is not to decide who was right or wrong, but to hold love, effort, growth, hope, heartbreak, memory, and release with honesty.</p>
-        <p class="dedication">For the memories, the conversations, the road trips, the letters, the love, the lessons, the growth, and the goodbye.</p>
-        <div class="hero-actions">
-          <a class="btn" href="${book.readHref}">Start Reading</a>
-          <a class="btn secondary" href="${book.contentsHref}">Table of Contents</a>
-          <a class="btn secondary" href="/">Back to Library</a>
-          ${bookmark ? `<a class="btn secondary" href="${hrefForChapter(chapterBySlug(bookmark))}">Continue Reading</a><a class="btn secondary" href="${hrefForChapter(chapterBySlug(bookmark))}">Return to Last Chapter</a>` : ""}
+      <div class="hero-inner cover-inner book-landing-layout">
+        <div class="book-landing-cover">
+          <img src="${book.artwork}" alt="" loading="eager" decoding="async" width="1200" height="1600">
+        </div>
+        <div class="book-landing-copy">
+          <p class="kicker">Memoir</p>
+          <h1>${escapeHtml(book.title)}</h1>
+          <p class="subtitle">${escapeHtml(book.subtitle)}</p>
+          <p class="byline">${escapeHtml(book.author)}</p>
+          <p class="note">${escapeHtml(book.description)}</p>
+          <div class="hero-actions">
+            <a class="btn" href="${book.readHref}">Start Reading</a>
+            <a class="btn secondary" href="${book.contentsHref}">Table of Contents</a>
+            <a class="btn secondary" href="/">Back to Library</a>
+            ${bookmark ? `<a class="btn secondary" href="${hrefForChapter(chapterBySlug(bookmark))}">Continue Reading</a><a class="btn secondary" href="${hrefForChapter(chapterBySlug(bookmark))}">Return to Last Chapter</a>` : ""}
+          </div>
         </div>
       </div>
     </section>`;
