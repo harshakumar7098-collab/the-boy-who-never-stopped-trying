@@ -5,8 +5,9 @@ const state = {
 
 const $ = (selector) => document.querySelector(selector);
 const view = $("#view");
-const chapters = window.MEMOIR.chapters;
-const note = window.MEMOIR.authorNote;
+const memoirData = window.MEMOIR || { chapters: [], authorNote: { paragraphs: [] } };
+const chapters = memoirData.chapters || [];
+const note = memoirData.authorNote || { paragraphs: [] };
 const coverSubtitle = "A Memoir About Love, Hope, Growth, and Learning to Let Go";
 const authorLibrary = {
   authorName: "Harsha Kumar Anand",
@@ -78,13 +79,13 @@ function slugFor(section) {
 }
 
 function firstChapter() {
-  return chapters.find((chapter) => chapter.kind === "chapter");
+  return chapters.find((chapter) => chapter.kind === "chapter") || null;
 }
 
 function chapterBySlug(slug) {
   if (slug === "epilogue") return chapters.find((chapter) => chapter.kind === "epilogue");
   const match = slug.match(/chapter-(\d+)/);
-  return match ? chapters.find((chapter) => chapter.number === Number(match[1])) : firstChapter();
+  return match ? chapters.find((chapter) => chapter.number === Number(match[1])) || firstChapter() : firstChapter();
 }
 
 function chapterIndex(section) {
@@ -92,6 +93,7 @@ function chapterIndex(section) {
 }
 
 function hrefForChapter(section) {
+  if (!section) return "/chapters/the-morning-that-stayed/";
   return `chapters/${staticChapterSlug(section)}/`;
 }
 

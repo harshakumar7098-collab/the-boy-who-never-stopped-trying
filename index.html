@@ -67,7 +67,40 @@
   </header>
 
   <main id="main" tabindex="-1">
-    <section id="view" aria-live="polite"></section>
+    <section id="view" aria-live="polite">
+      <section class="author-library-intro bookshelf-home reveal">
+        <div class="library-intro-inner">
+          <h1>Harsha Kumar Anand</h1>
+          <p class="subtitle">Books &amp; Stories</p>
+        </div>
+      </section>
+      <section class="page book-library-section reveal" aria-labelledby="my-books-heading">
+        <div class="section-head">
+          <div>
+            <p class="kicker">Library</p>
+            <h2 id="my-books-heading">My Books</h2>
+          </div>
+        </div>
+        <div class="book-grid">
+          <article class="book-card bookshelf-book-card" style="--book-artwork:url('assets/artwork/home.jpeg')">
+            <a class="book-card-link" href="/books/the-boy-who-never-stopped-trying/" aria-label="Open The Boy Who Never Stopped Trying">
+              <span class="book-card-art">
+                <img src="assets/artwork/home.jpeg" alt="" loading="eager" decoding="async" width="1200" height="1600">
+              </span>
+              <span class="book-card-copy">
+                <span class="book-card-title">The Boy Who Never Stopped Trying</span>
+                <span class="book-card-description">A memoir about love, hope, and learning to let go.</span>
+              </span>
+            </a>
+            <div class="book-card-actions" aria-label="The Boy Who Never Stopped Trying actions">
+              <a class="btn" href="/books/the-boy-who-never-stopped-trying/">Open Book</a>
+              <a class="btn secondary" href="/chapters/the-morning-that-stayed/">Start Reading</a>
+              <a class="btn secondary" href="/chapters/">Table of Contents</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </section>
   </main>
 
   <div class="ambient" aria-hidden="true">
