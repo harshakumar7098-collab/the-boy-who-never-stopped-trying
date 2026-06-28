@@ -8,6 +8,30 @@ const view = $("#view");
 const chapters = window.MEMOIR.chapters;
 const note = window.MEMOIR.authorNote;
 const coverSubtitle = "A Memoir About Love, Hope, Growth, and Learning to Let Go";
+const authorLibrary = {
+  authorName: "Harsha Kumar Anand",
+  tagline: "Stories that stayed with me long after the people left.",
+  books: [
+    {
+      id: "the-boy-who-never-stopped-trying",
+      label: "Book 1",
+      title: "The Boy Who Never Stopped Trying",
+      author: "H.K Anand",
+      subtitle: "A memoir about love, hope, and learning to let go.",
+      description: "A cinematic memoir about the memories that refuse to leave quietly: first love, effort, hope, heartbreak, and the slow, honest work of becoming someone larger after goodbye.",
+      artwork: "assets/artwork/home.jpeg",
+      landingHref: "books/the-boy-who-never-stopped-trying/",
+      landingHash: "#book/the-boy-who-never-stopped-trying",
+      readHref: "chapters/the-morning-that-stayed/",
+      contentsHref: "chapters/",
+    },
+  ],
+};
+
+function currentBook() {
+  return authorLibrary.books[0];
+}
+
 function staticChapterSlug(section) {
   if (section.kind === "epilogue") return "epilogue";
   return section.title
@@ -70,6 +94,20 @@ function chapterIndex(section) {
 
 function hrefForChapter(section) {
   return `chapters/${staticChapterSlug(section)}/`;
+}
+
+function setDocumentMeta({ title, description, canonical = "https://harshabooks.com/" }) {
+  document.title = title;
+  const descriptionMeta = document.querySelector('meta[name="description"]');
+  const ogTitle = document.querySelector('meta[property="og:title"]');
+  const ogDescription = document.querySelector('meta[property="og:description"]');
+  const ogUrl = document.querySelector('meta[property="og:url"]');
+  const canonicalLink = document.querySelector('link[rel="canonical"]');
+  if (descriptionMeta) descriptionMeta.setAttribute("content", description);
+  if (ogTitle) ogTitle.setAttribute("content", title);
+  if (ogDescription) ogDescription.setAttribute("content", description);
+  if (ogUrl) ogUrl.setAttribute("content", canonical);
+  if (canonicalLink) canonicalLink.setAttribute("href", canonical);
 }
 
 function artworkFor(section) {
@@ -174,10 +212,61 @@ function characterStage(classes) {
     </div>`;
 }
 
-function renderHome() {
-  const bookmark = localStorage.getItem("memoir-bookmark");
+function bookCard(book) {
+  return `
+    <article class="book-card premium-book-card" style="--book-artwork:url('${book.artwork}')">
+      <a class="book-card-art" href="${book.landingHref}" aria-label="Open ${escapeHtml(book.title)}">
+        <img src="${book.artwork}" alt="" loading="eager" decoding="async" width="1200" height="1600">
+      </a>
+      <div class="book-card-copy">
+        <p class="kicker">${escapeHtml(book.label)}</p>
+        <h2>${escapeHtml(book.title)}</h2>
+        <p class="subtitle">${escapeHtml(book.subtitle)}</p>
+        <div class="book-card-actions">
+          <a class="btn" href="${book.landingHref}">Open Book</a>
+          <a class="btn secondary" href="${book.readHref}">Start Reading</a>
+          <a class="btn secondary" href="${book.contentsHref}">Table of Contents</a>
+        </div>
+      </div>
+    </article>`;
+}
+
+function renderLibraryHome() {
+  setDocumentMeta({
+    title: "Harsha Kumar Anand | Books",
+    description: "The official author library of Harsha Kumar Anand, featuring cinematic digital books and memoirs including The Boy Who Never Stopped Trying.",
+  });
   view.innerHTML = `
-    <section class="hero cover-experience reveal" style="--hero-artwork:url('assets/artwork/home.jpeg')">
+    <section class="author-library-hero reveal">
+      <div class="library-hero-art" aria-hidden="true"></div>
+      <div class="library-hero-inner">
+        <p class="kicker">Author Library</p>
+        <h1>${escapeHtml(authorLibrary.authorName)}</h1>
+        <p class="subtitle">${escapeHtml(authorLibrary.tagline)}</p>
+      </div>
+    </section>
+    <section class="page book-library-section reveal" aria-labelledby="my-books-heading">
+      <div class="section-head">
+        <div>
+          <p class="kicker">Library</p>
+          <h2 id="my-books-heading">My Books</h2>
+        </div>
+      </div>
+      <div class="book-grid">
+        ${authorLibrary.books.map(bookCard).join("")}
+      </div>
+    </section>`;
+}
+
+function renderBookLanding(book = currentBook()) {
+  const bookmark = localStorage.getItem("memoir-bookmark");
+  setDocumentMeta({
+    title: "The Boy Who Never Stopped Trying | H.K Anand",
+    description: book.subtitle,
+    canonical: "https://harshabooks.com/#book/the-boy-who-never-stopped-trying",
+  });
+  view.innerHTML = `
+    <section class="hero cover-experience book-landing-page reveal" style="--hero-artwork:url('${book.artwork}')">
       <div class="home-memory-stage" aria-hidden="true">
         <span class="home-sun"></span>
         <span class="home-road"></span>
@@ -188,23 +277,30 @@ function renderHome() {
       </div>
       <div class="cover-light"></div>
       <div class="hero-inner cover-inner">
-        <p class="kicker">A premium digital memoir</p>
-        <h1>${escapeHtml(window.MEMOIR.title)}</h1>
-        <p class="subtitle">${escapeHtml(coverSubtitle)}</p>
-        <p class="byline">Written by H.K Anand</p>
+        <p class="kicker">${escapeHtml(book.label)}</p>
+        <h1>${escapeHtml(book.title)}</h1>
+        <p class="subtitle">${escapeHtml(book.subtitle)}</p>
+        <p class="byline">${escapeHtml(book.author)}</p>
+        <p class="note">${escapeHtml(book.description)}</p>
         <p class="byline">Narrated through the character Arjun</p>
         <p class="note">Some names, places, timelines, and identifying details have been changed. This memoir is inspired by real emotions, memories, and experiences. Its purpose is not to decide who was right or wrong, but to hold love, effort, growth, hope, heartbreak, memory, and release with honesty.</p>
         <p class="dedication">For the memories, the conversations, the road trips, the letters, the love, the lessons, the growth, and the goodbye.</p>
         <div class="hero-actions">
-          <a class="btn" href="${hrefForChapter(firstChapter())}">Read Chapter 1</a>
+          <a class="btn" href="${book.readHref}">Start Reading</a>
+          <a class="btn secondary" href="${book.contentsHref}">Table of Contents</a>
+          <a class="btn secondary" href="/">Back to Library</a>
           ${bookmark ? `<a class="btn secondary" href="${hrefForChapter(chapterBySlug(bookmark))}">Continue Reading</a><a class="btn secondary" href="${hrefForChapter(chapterBySlug(bookmark))}">Return to Last Chapter</a>` : ""}
-          <a class="btn secondary" href="#toc">Table of Contents</a>
         </div>
       </div>
     </section>`;
 }
 
 function renderToc() {
+  setDocumentMeta({
+    title: "The Boy Who Never Stopped Trying | Table of Contents",
+    description: "Table of contents for The Boy Who Never Stopped Trying by H.K Anand.",
+    canonical: "https://harshabooks.com/chapters/",
+  });
   const done = completionSet();
   view.innerHTML = `
     <section class="page reveal">
@@ -286,6 +382,10 @@ function renderReader(slug) {
 }
 
 function renderMemories() {
+  setDocumentMeta({
+    title: "Memories | The Boy Who Never Stopped Trying",
+    description: "A visual journey through the memories behind The Boy Who Never Stopped Trying.",
+  });
   const memoryChapters = chapters;
   view.innerHTML = `
     <section class="page memories-page reveal">
@@ -302,6 +402,10 @@ function renderMemories() {
 }
 
 function renderSearch() {
+  setDocumentMeta({
+    title: "Search | The Boy Who Never Stopped Trying",
+    description: "Search the chapters of The Boy Who Never Stopped Trying by H.K Anand.",
+  });
   view.innerHTML = `
     <section class="page reveal">
       <div class="section-head">
@@ -402,12 +506,14 @@ function route() {
     location.href = hrefForChapter(chapter);
     return;
   }
-  if (hash === "toc") location.href = "chapters/";
+  if (hash === "book/the-boy-who-never-stopped-trying") renderBookLanding();
+  else if (hash === "toc") location.href = "chapters/";
   else if (hash === "memories" || hash === "timeline") renderMemories();
   else if (hash === "search") renderSearch();
   else if (hash === "after-the-last-page" || hash === "memory" || hash === "author") location.href = "/after-the-last-page/";
   else if (hash === "final") renderFinal();
-  else renderHome();
+  else if (hash === "home" || hash === "library") renderLibraryHome();
+  else renderLibraryHome();
   window.scrollTo({ top: 0, behavior: "smooth" });
   updateProgress();
 }

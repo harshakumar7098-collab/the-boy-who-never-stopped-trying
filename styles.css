@@ -671,6 +671,147 @@ body.immersive .reader-shell { width: min(820px, calc(100% - 1rem)); }
   animation: lightSweep 9s ease-in-out infinite;
   pointer-events: none;
 }
+.author-library-hero {
+  position: relative;
+  min-height: min(760px, calc(100vh - 58px));
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  isolation: isolate;
+  color: #fff8eb;
+  background: #101114;
+}
+.author-library-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  background:
+    linear-gradient(90deg, rgba(10, 8, 6, .88), rgba(10, 8, 6, .42) 54%, rgba(10, 8, 6, .18)),
+    linear-gradient(0deg, rgba(10, 8, 6, .84), transparent 62%),
+    url("assets/artwork/home.jpeg") center/cover no-repeat;
+  filter: saturate(.92) contrast(1.04);
+  transform: scale(1.02);
+}
+.author-library-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(120deg, rgba(212, 168, 98, .18), transparent 38%),
+    radial-gradient(circle at 72% 22%, rgba(135, 165, 185, .18), transparent 24rem);
+}
+.library-hero-art {
+  position: absolute;
+  right: clamp(1rem, 6vw, 6rem);
+  bottom: clamp(1rem, 6vw, 5rem);
+  width: min(30vw, 18rem);
+  aspect-ratio: 3 / 4;
+  border: 1px solid rgba(255, 248, 235, .22);
+  background: url("assets/artwork/home.jpeg") center/cover no-repeat;
+  box-shadow: 0 34px 80px rgba(0, 0, 0, .48);
+  opacity: .82;
+}
+.library-hero-inner {
+  width: min(1180px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: clamp(5rem, 10vw, 8rem) 0 clamp(4rem, 8vw, 7rem);
+}
+.author-library-hero h1 {
+  max-width: 11ch;
+  color: #fff8eb;
+  font-size: clamp(4rem, 12vw, 9rem);
+}
+.author-library-hero .subtitle {
+  max-width: 46rem;
+  color: rgba(255, 248, 235, .84);
+}
+.book-library-section {
+  padding-top: clamp(3.5rem, 7vw, 7rem);
+}
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+  gap: clamp(1.2rem, 3vw, 2rem);
+}
+.book-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(9rem, .42fr) minmax(0, 1fr);
+  gap: clamp(1rem, 3vw, 2rem);
+  min-height: 26rem;
+  padding: clamp(1rem, 3vw, 1.6rem);
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--gold) 30%, var(--line));
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--paper-soft) 84%, transparent), color-mix(in srgb, var(--paper) 72%, transparent)),
+    var(--paper-soft);
+  box-shadow: var(--shadow);
+}
+.book-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--paper-soft) 92%, transparent), color-mix(in srgb, var(--paper-soft) 62%, transparent)),
+    var(--book-artwork) center/cover no-repeat;
+  opacity: .18;
+}
+.book-card::after {
+  content: "";
+  position: absolute;
+  inset: auto 1.2rem 1.2rem auto;
+  width: 8rem;
+  height: 1px;
+  background: var(--gold);
+  opacity: .8;
+}
+.book-card-art,
+.book-card-copy {
+  position: relative;
+  z-index: 1;
+}
+.book-card-art {
+  align-self: stretch;
+  min-height: 20rem;
+  border: 1px solid color-mix(in srgb, var(--gold) 28%, var(--line));
+  overflow: hidden;
+  box-shadow: 0 24px 62px rgba(0, 0, 0, .22);
+}
+.book-card-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .7s ease;
+}
+.book-card:hover .book-card-art img {
+  transform: scale(1.035);
+}
+.book-card-copy {
+  align-self: center;
+  padding: clamp(.5rem, 2vw, 1rem) 0;
+}
+.book-card-copy h2 {
+  max-width: 12ch;
+  margin: 0;
+  font-size: clamp(2.6rem, 6vw, 5.4rem);
+}
+.book-card-copy .subtitle {
+  max-width: 34rem;
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+}
+.book-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: 1.5rem;
+}
+.book-landing-page h1 {
+  max-width: 11ch;
+}
 .home-memory-stage {
   position: absolute;
   inset: 0;
@@ -2315,6 +2456,33 @@ body.immersive .chapter-body {
     background:
       linear-gradient(90deg, rgba(12, 10, 8, .76), rgba(12, 10, 8, .28)),
       linear-gradient(0deg, var(--paper), transparent 58%);
+  }
+  .author-library-hero {
+    min-height: 76svh;
+  }
+  .library-hero-art {
+    right: 1rem;
+    bottom: 1rem;
+    width: min(38vw, 9rem);
+    opacity: .42;
+  }
+  .library-hero-inner {
+    padding: 5.5rem 0 4rem;
+  }
+  .author-library-hero h1 {
+    font-size: clamp(3.4rem, 16vw, 5.8rem);
+  }
+  .book-card {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+  .book-card-art {
+    min-height: 18rem;
+    max-height: 28rem;
+  }
+  .book-card-copy h2 {
+    max-width: 11ch;
+    font-size: clamp(2.6rem, 13vw, 4rem);
   }
   .chapter-hero[style*="--hero-artwork"] {
     min-height: 72svh;
