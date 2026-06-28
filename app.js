@@ -19,10 +19,10 @@ const authorLibrary = {
       subtitle: "A memoir about love, hope, and learning to let go.",
       description: "A cinematic memoir about the memories that refuse to leave quietly: first love, effort, hope, heartbreak, and the slow, honest work of becoming someone larger after goodbye.",
       artwork: "assets/artwork/home.jpeg",
-      landingHref: "books/the-boy-who-never-stopped-trying/",
+      landingHref: "/books/the-boy-who-never-stopped-trying/",
       landingHash: "#book/the-boy-who-never-stopped-trying",
-      readHref: "chapters/the-morning-that-stayed/",
-      contentsHref: "chapters/",
+      readHref: "/chapters/the-morning-that-stayed/",
+      contentsHref: "/chapters/",
     },
   ],
 };
@@ -223,6 +223,11 @@ function bookCard(book) {
           <span class="book-card-description">${escapeHtml(book.subtitle)}</span>
         </span>
       </a>
+      <div class="book-card-actions" aria-label="${escapeHtml(book.title)} actions">
+        <a class="btn" href="${book.landingHref}">Open Book</a>
+        <a class="btn secondary" href="${book.readHref}">Start Reading</a>
+        <a class="btn secondary" href="${book.contentsHref}">Table of Contents</a>
+      </div>
     </article>`;
 }
 
@@ -232,8 +237,8 @@ function renderLibraryHome() {
     description: "Books and stories by Harsha Kumar Anand, including The Boy Who Never Stopped Trying.",
   });
   view.innerHTML = `
-    <section class="author-library-hero bookshelf-home reveal">
-      <div class="library-hero-inner">
+    <section class="author-library-intro bookshelf-home reveal">
+      <div class="library-intro-inner">
         <h1>${escapeHtml(authorLibrary.authorName)}</h1>
         <p class="subtitle">${escapeHtml(authorLibrary.tagline)}</p>
       </div>
@@ -529,11 +534,11 @@ function updateProgress() {
   }
 }
 
-$("#themeToggle").addEventListener("click", () => {
+$("#themeToggle")?.addEventListener("click", () => {
   setTheme(document.body.classList.contains("dark") ? "light" : "dark");
 });
 
-$("#bookmarkBtn").addEventListener("click", () => {
+$("#bookmarkBtn")?.addEventListener("click", () => {
   const hash = location.hash.replace(/^#\/?read\//, "");
   if (hash && location.hash.startsWith("#read/")) {
     localStorage.setItem("memoir-bookmark", hash);
@@ -542,7 +547,7 @@ $("#bookmarkBtn").addEventListener("click", () => {
   }
 });
 
-$("#immersiveBtn").addEventListener("click", () => {
+$("#immersiveBtn")?.addEventListener("click", () => {
   document.body.classList.toggle("immersive");
 });
 

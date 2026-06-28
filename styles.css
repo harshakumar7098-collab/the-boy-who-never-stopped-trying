@@ -671,7 +671,7 @@ body.immersive .reader-shell { width: min(820px, calc(100% - 1rem)); }
   animation: lightSweep 9s ease-in-out infinite;
   pointer-events: none;
 }
-.author-library-hero {
+.author-library-intro {
   position: relative;
   min-height: 0;
   display: grid;
@@ -682,7 +682,7 @@ body.immersive .reader-shell { width: min(820px, calc(100% - 1rem)); }
   background:
     linear-gradient(180deg, color-mix(in srgb, var(--paper-soft) 92%, transparent), color-mix(in srgb, var(--paper) 98%, transparent));
 }
-.author-library-hero::before {
+.author-library-intro::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -691,7 +691,7 @@ body.immersive .reader-shell { width: min(820px, calc(100% - 1rem)); }
     linear-gradient(90deg, rgba(184, 131, 53, .11), transparent 36%),
     linear-gradient(270deg, rgba(111, 135, 149, .09), transparent 32%);
 }
-.author-library-hero::after {
+.author-library-intro::after {
   content: "";
   position: absolute;
   inset: auto 0 0;
@@ -699,20 +699,20 @@ body.immersive .reader-shell { width: min(820px, calc(100% - 1rem)); }
   height: 1px;
   background: var(--line);
 }
-.library-hero-art {
+.library-intro-art {
   display: none;
 }
-.library-hero-inner {
+.library-intro-inner {
   width: min(1180px, calc(100% - 2rem));
   margin: 0 auto;
   padding: clamp(2.2rem, 5vw, 4.5rem) 0 clamp(1.6rem, 4vw, 3rem);
 }
-.author-library-hero h1 {
+.author-library-intro h1 {
   max-width: none;
   color: var(--ink);
   font-size: clamp(2.4rem, 7vw, 5rem);
 }
-.author-library-hero .subtitle {
+.author-library-intro .subtitle {
   max-width: 46rem;
   margin-top: .55rem;
   color: var(--muted);
@@ -724,13 +724,21 @@ body.immersive .reader-shell { width: min(820px, calc(100% - 1rem)); }
 }
 .book-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 18rem));
+  grid-template-columns: minmax(0, 58rem);
   gap: clamp(1.25rem, 3vw, 2.25rem);
   align-items: start;
 }
 .book-card {
   position: relative;
-  overflow: visible;
+  display: grid;
+  gap: clamp(1rem, 3vw, 1.5rem);
+  padding: clamp(1rem, 3vw, 1.35rem);
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--gold) 22%, var(--line));
+  background:
+    linear-gradient(145deg, color-mix(in srgb, var(--paper-soft) 92%, transparent), color-mix(in srgb, var(--mist) 18%, transparent)),
+    var(--paper-soft);
+  box-shadow: 0 18px 52px rgba(57, 42, 28, .12);
 }
 .book-card::before {
   display: none;
@@ -740,7 +748,9 @@ body.immersive .reader-shell { width: min(820px, calc(100% - 1rem)); }
 }
 .book-card-link {
   display: grid;
+  grid-template-columns: minmax(7.8rem, 12rem) minmax(0, 1fr);
   gap: 1rem;
+  align-items: end;
   color: inherit;
 }
 .book-card-art,
@@ -767,23 +777,26 @@ body.immersive .reader-shell { width: min(820px, calc(100% - 1rem)); }
 }
 .book-card-copy {
   display: grid;
-  gap: .45rem;
-  padding: 0 .15rem;
+  gap: .65rem;
+  padding: .4rem .15rem;
 }
 .book-card-title {
   font-family: var(--serif-display);
-  font-size: clamp(1.35rem, 2.5vw, 1.7rem);
+  font-size: clamp(1.7rem, 4vw, 3rem);
   line-height: 1.05;
   color: var(--ink);
 }
 .book-card-description {
   color: var(--muted);
   font-family: var(--sans);
-  font-size: .95rem;
-  line-height: 1.45;
+  font-size: clamp(.98rem, 2vw, 1.08rem);
+  line-height: 1.55;
 }
 .book-card-actions {
-  display: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .7rem;
+  padding-left: calc(min(12rem, max(7.8rem, 21vw)) + 1rem);
 }
 .book-landing-page h1 {
   max-width: 11ch;
@@ -2452,23 +2465,29 @@ body.immersive .chapter-body {
       linear-gradient(90deg, rgba(12, 10, 8, .76), rgba(12, 10, 8, .28)),
       linear-gradient(0deg, var(--paper), transparent 58%);
   }
-  .author-library-hero {
+  .author-library-intro {
     min-height: 0;
   }
-  .library-hero-art {
+  .library-intro-art {
     display: none;
   }
-  .library-hero-inner {
+  .library-intro-inner {
     padding: 2.4rem 0 1.4rem;
   }
-  .author-library-hero h1 {
+  .author-library-intro h1 {
     font-size: clamp(2.4rem, 13vw, 4.6rem);
   }
   .book-grid {
-    grid-template-columns: minmax(0, 18rem);
+    grid-template-columns: 1fr;
   }
   .book-card {
     min-height: 0;
+  }
+  .book-card-link {
+    grid-template-columns: minmax(0, 12rem);
+  }
+  .book-card-actions {
+    padding-left: 0;
   }
   .book-card-art {
     min-height: 0;
