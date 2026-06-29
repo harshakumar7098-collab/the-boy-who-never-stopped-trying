@@ -3,3 +3,4 @@ Thumbs.db
 *.log
 *.tmp
 node_modules/
+CLAUDE.local.md
