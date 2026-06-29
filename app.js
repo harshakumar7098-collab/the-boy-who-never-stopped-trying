@@ -24,6 +24,23 @@ const authorLibrary = {
       landingHash: "#book/the-boy-who-never-stopped-trying",
       readHref: "/chapters/the-morning-that-stayed/",
       contentsHref: "/chapters/",
+      actions: [
+        { label: "Open Book", href: "/books/the-boy-who-never-stopped-trying/", variant: "primary" },
+        { label: "Start Reading", href: "/chapters/the-morning-that-stayed/", variant: "secondary" },
+        { label: "Table of Contents", href: "/chapters/", variant: "secondary" },
+      ],
+    },
+    {
+      id: "the-voice-library",
+      title: "The Voice Library",
+      subtitle: "Some voices were never meant to be forgotten.",
+      description: "A quiet mystery about forgotten recordings, ordinary lives, and the person who stayed long enough to listen.",
+      landingHref: "/books/the-voice-library/",
+      coverType: "tvl-placeholder",
+      actions: [
+        { label: "Enter the Archive", href: "/books/the-voice-library/", variant: "primary" },
+        { label: "Open Book", href: "/books/the-voice-library/", variant: "secondary" },
+      ],
     },
   ],
 };
@@ -214,21 +231,32 @@ function characterStage(classes) {
 }
 
 function bookCard(book) {
+  const isTvl = book.coverType === "tvl-placeholder";
+  const actions = book.actions || [
+    { label: "Open Book", href: book.landingHref, variant: "primary" },
+    { label: "Start Reading", href: book.readHref, variant: "secondary" },
+    { label: "Table of Contents", href: book.contentsHref, variant: "secondary" },
+  ];
   return `
-    <article class="book-card bookshelf-book-card" style="--book-artwork:url('${book.artwork}')">
+    <article class="book-card bookshelf-book-card${isTvl ? " tvl-library-card" : ""}"${book.artwork ? ` style="--book-artwork:url('${book.artwork}')"` : ""}>
       <a class="book-card-link" href="${book.landingHref}" aria-label="Open ${escapeHtml(book.title)}">
         <span class="book-card-art">
-          <img src="${book.artwork}" alt="" loading="eager" decoding="async" width="1200" height="1600">
+          ${isTvl ? `<span class="tvl-card-cover" aria-hidden="true">
+            <span class="tvl-card-rain"></span>
+            <span class="tvl-card-glow"></span>
+            <span class="tvl-card-wave"><span></span><span></span><span></span><span></span><span></span><span></span></span>
+            <span class="tvl-card-led"></span>
+            <span class="tvl-card-server">SERVER 14</span>
+          </span>` : `<img src="${book.artwork}" alt="" loading="eager" decoding="async" width="1200" height="1600">`}
         </span>
         <span class="book-card-copy">
           <span class="book-card-title">${escapeHtml(book.title)}</span>
           <span class="book-card-description">${escapeHtml(book.subtitle)}</span>
+          ${book.id === "the-voice-library" ? `<span class="tvl-card-description">${escapeHtml(book.description)}</span>` : ""}
         </span>
       </a>
       <div class="book-card-actions" aria-label="${escapeHtml(book.title)} actions">
-        <a class="btn" href="${book.landingHref}">Open Book</a>
-        <a class="btn secondary" href="${book.readHref}">Start Reading</a>
-        <a class="btn secondary" href="${book.contentsHref}">Table of Contents</a>
+        ${actions.map((action) => `<a class="btn${action.variant === "secondary" ? " secondary" : ""}" href="${action.href}">${escapeHtml(action.label)}</a>`).join("")}
       </div>
     </article>`;
 }
