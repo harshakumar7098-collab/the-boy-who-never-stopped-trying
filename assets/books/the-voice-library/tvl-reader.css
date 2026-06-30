@@ -1,0 +1,200 @@
+/* ============================================================
+   THE VOICE LIBRARY — Reader stylesheet
+   Scope: books/the-voice-library/chapter-one/
+   All selectors namespaced tvl-
+   No entrance fades. No scroll effects. No animated backgrounds.
+   Only moving element: progress bar width (driven by JS).
+   ============================================================ */
+
+:root {
+  color-scheme: dark;
+  --tvl-black:      #0D0F12;
+  --tvl-charcoal:   #151A22;
+  --tvl-blue-black: #1C2333;
+  --tvl-blue:       #3B6EA5;
+  --tvl-ink:        #E7EDF0;
+  --tvl-muted:      rgba(231, 237, 240, .58);
+  --tvl-faint:      rgba(231, 237, 240, .28);
+  --tvl-line:       rgba(231, 237, 240, .12);
+  --tvl-serif:      "Georgia", "Times New Roman", serif;
+  --tvl-sans:       "Segoe UI", system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+/* ── Base ── */
+.tvl-reader-page {
+  background: linear-gradient(
+    180deg,
+    var(--tvl-black) 0%,
+    var(--tvl-charcoal) 60%,
+    var(--tvl-blue-black) 100%
+  );
+  color: var(--tvl-ink);
+  font-family: var(--tvl-sans);
+  min-height: 100vh;
+}
+
+/* ── Progress bar ── */
+.tvl-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(231, 237, 240, .07);
+  z-index: 200;
+}
+
+.tvl-progress-fill {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: var(--tvl-blue);
+  transition: width .1s linear;
+}
+
+/* ── Navigation ── */
+.tvl-reader-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem 1.75rem;
+  padding: 1.5rem clamp(1.25rem, 6vw, 3.5rem);
+  padding-top: calc(1.5rem + 3px);
+}
+
+.tvl-reader-nav-link {
+  color: var(--tvl-muted);
+  font-family: var(--tvl-sans);
+  font-size: .82rem;
+  letter-spacing: .04em;
+  text-decoration: none;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.tvl-reader-nav-link:hover {
+  color: var(--tvl-ink);
+}
+
+.tvl-reader-nav-link:focus-visible {
+  outline: 2px solid var(--tvl-blue);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* ── Main column ── */
+.tvl-reader-main {
+  max-width: 38rem;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 6vw, 2.5rem) 7rem;
+}
+
+/* ── Section label (h1) ── */
+.tvl-reader-label {
+  font-family: var(--tvl-sans);
+  font-size: .76rem;
+  font-weight: 400;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--tvl-muted);
+  margin: 2.75rem 0 3.25rem;
+}
+
+/* ── Article ── */
+.tvl-reader-article {
+  /* no special wrapper styles; paragraphs do the work */
+}
+
+.tvl-reader-article p {
+  font-family: var(--tvl-serif);
+  font-size: clamp(1.06rem, 2.2vw, 1.2rem);
+  line-height: 1.86;
+  color: var(--tvl-ink);
+  margin: 0 0 1.15em;
+}
+
+.tvl-reader-article p strong {
+  font-weight: 600;
+  color: var(--tvl-ink);
+}
+
+.tvl-reader-article p em {
+  font-style: italic;
+}
+
+/* ── Ending state ── */
+.tvl-reader-end {
+  margin-top: 5.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--tvl-line);
+  text-align: center;
+}
+
+.tvl-reader-end-section {
+  font-family: var(--tvl-sans);
+  font-size: .76rem;
+  font-weight: 400;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--tvl-muted);
+  margin: 0 0 .5rem;
+}
+
+.tvl-reader-end-next {
+  font-family: var(--tvl-serif);
+  font-size: 1rem;
+  color: var(--tvl-faint);
+  margin: 0;
+  font-style: italic;
+}
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .tvl-reader-nav {
+    gap: .5rem 1.25rem;
+    padding: 1.15rem 1.25rem;
+    padding-top: calc(1.15rem + 3px);
+  }
+
+  .tvl-reader-label {
+    margin: 2rem 0 2.5rem;
+  }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .tvl-progress-fill {
+    transition: none;
+  }
+}
+
+/* ── High contrast / forced colours ── */
+@media (forced-colors: active) {
+  .tvl-progress-fill {
+    background: Highlight;
+  }
+
+  .tvl-reader-nav-link {
+    color: LinkText;
+  }
+}
